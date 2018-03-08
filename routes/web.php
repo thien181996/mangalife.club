@@ -15,4 +15,6 @@ Route::get('/panel/', function () {
     return view('admin.layouts.main');
 });
 
-Route::get('/panel/user/')
+
+
+Route::get('/panel/user','admin\UserController@listUser')->name('panel.listUser');

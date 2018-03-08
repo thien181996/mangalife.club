@@ -47,7 +47,7 @@
                         </span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true" >
-                        <a  href="components/base/state.html" class="m-menu__link ">
+                        <a  href="{{ route('panel.listUser') }}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>

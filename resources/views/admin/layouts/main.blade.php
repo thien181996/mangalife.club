@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <meta charset="utf-8" />
     <title>
-        @yield('title')
+        @yield('title') | Mangalife.club
     </title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +68,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
                         <h3 class="m-subheader__title ">
-                            Bảng điều khiển
+                            @yield('title')
                         </h3>
                     </div>
                     {{--<div>--}}
