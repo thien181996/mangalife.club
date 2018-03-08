@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/panel/', function () {
+    return view('admin.layouts.main');
 });
+
+Route::get('/panel/user/')
