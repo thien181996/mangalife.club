@@ -6,12 +6,23 @@ body {
 
 .section-copyright, .section-manga-new, .section-slider {
     padding-top: 15px;
-    padding-bottom: 15px;
-
 }
 
 .bg-theme {
     background: #FF9E1D !important;
+}
+
+.heading-title {
+    background: #FF9E1D;
+    color: #402707;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+
+
+.section-manga-new-sidebar {
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /*End Common here*/
