@@ -7,12 +7,14 @@ body {
 .section-copyright, .section-manga-new, .section-slider {
     padding-top: 15px;
     padding-bottom: 15px;
+
+}
+
+.bg-theme {
+    background: #FF9E1D !important;
 }
 
 /*End Common here*/
-.section-navigation .navbar.navbar-expand-lg.navbar-dark.bg-light {
-    background: #f40009 !important;
-}
 
 .section-navigation .btn.btn-outline-success {
     background: white;
@@ -29,6 +31,15 @@ body {
     background: white;
     color: #f40009 !important;
     border-color: #f40009 !important;
+}
+
+.section-navigation .nav-item .nav-link {
+    color: #7F4F0E !important;
+}
+
+.section-navigation .nav-item.active .nav-link {
+    color: #402707 !important;
+    font-weight: bold;
 }
 
 /*Mega Menu*/
@@ -122,11 +133,65 @@ body {
 
 /*New manga section*/
 /*// Small devices (landscape phones, 576px and up)*/
+/*New manga section -> item*/
 .item-img-width {
     width: 100%;
     min-height: 80px;
 }
 
+@keyframes ringring {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.item:hover, .swiper-slide:hover {
+    -webkit-animation-name: ringring;
+    animation-name: ringring;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.section-padding {
+    width: 100%;
+    padding: 5px 10px;
+
+}
+
+.item-title {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bg-theme .item-link {
+    color: #402707 !important;
+    font-weight: bold;
+}
+
+.bg-theme .item-chapter-link {
+    color: #402707 !important;
+
+}
+
+/*end New manga section -> item*/
 @media (min-width: 576px) {
     .item-img-width {
         min-height: 120px;
@@ -135,7 +200,9 @@ body {
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-
+    .item-img-width {
+        min-height: 160px;
+    }
 }
 
 /*// Large devices (desktops, 992px and up)*/
@@ -147,7 +214,9 @@ body {
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-
+    .item-img-width {
+        min-height: 260px;
+    }
 }
 
 /*End New Manga Section*/
