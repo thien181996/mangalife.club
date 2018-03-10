@@ -44,84 +44,92 @@
 <body>
 <header id="header">
     <div class="section-navigation">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-theme">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('pages/images/logo.png') }}" width="200">
-            </a>
-            <div class="notify">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-theme">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('pages/images/logo.png') }}" width="200">
+                </a>
+                <div class="notify">
 
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    {{--<li class="nav-item active">--}}
-                    {{--<a class="nav-link" href="#">Đăng nhập / Đăng ký <span class="sr-only">(current)</span></a>--}}
-                    {{--</li>--}}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Đăng nhập</a>
-                    </li>
-                    <li class="dropdown menu-large nav-item"><a href="#" class="dropdown-toggle nav-link"
-                                                                data-toggle="dropdown"> Thể loại </a>
-                        <ul class="dropdown-menu megamenu">
-                            <li class="dropdown-item">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-3 text-center">
-                                        <div class="card">
-                                            <a href="#" class="thumbnail">
-                                                <img src="http://placehold.it/150x120">
-                                            </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        {{--<li class="nav-item active">--}}
+                        {{--<a class="nav-link" href="#">Đăng nhập / Đăng ký <span class="sr-only">(current)</span></a>--}}
+                        {{--</li>--}}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Đăng nhập</a>
+                        </li>
+                        <li class="dropdown menu-large nav-item"><a href="#" class="dropdown-toggle nav-link"
+                                                                    data-toggle="dropdown"> Thể loại </a>
+                            <ul class="dropdown-menu megamenu">
+                                <li class="dropdown-item">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="card">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="http://placehold.it/150x120">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="card">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="http://placehold.it/150x120">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="card">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="http://placehold.it/150x120">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="card">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="http://placehold.it/150x120">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-3 text-center">
-                                        <div class="card">
-                                            <a href="#" class="thumbnail">
-                                                <img src="http://placehold.it/150x120">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 text-center">
-                                        <div class="card">
-                                            <a href="#" class="thumbnail">
-                                                <img src="http://placehold.it/150x120">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 text-center">
-                                        <div class="card">
-                                            <a href="#" class="thumbnail">
-                                                <img src="http://placehold.it/150x120">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nhóm dịch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">List truyện</a>
-                    </li>
-                    {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
-                    {{--</li>--}}
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nhóm dịch</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">List truyện</a>
+                        </li>
+                        {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
+                        {{--</li>--}}
+
+                    </ul>
+                    <form class="form-inline manga-search-merge pull-right">
+                        <span class="fa fa-search manga-search-submit"></span>
+                        <input class="form-control mr-sm-2 manga-search" type="search"
+                               aria-label="Search">
+                    </form>
+
+                </div>
+            </nav>
+        </div>
+
     </div>
 
 </header>
 
 <main>
+
     <div class="section-slider">
         <div class="container">
             <div class="row">
@@ -135,142 +143,283 @@
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
+
                             </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
+
                             </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="img-merge">
                                 <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="full-width">
-                                <img src="{{asset('pages/images/hot.gif')}}" class="hot" alt="">
-                            </div>
 
-                            <a href="">Title</a>
-                            <p>Chap 1</p>
+                            </div>
+                            <div class="section-padding">
+                                <div class="item-title">
+                                    <a href="#" class="item-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                        pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
+                                        pieceone
+                                        piece onepiece</a>
+                                    <br>
+                                    <a href="#" class="item-chapter-link"
+                                       title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                        1: </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
 
                     <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    {{--<div class="swiper-button-prev"></div>--}}
+                    {{--<div class="swiper-button-next"></div>--}}
 
                     {{--<!-- If we need scrollbar -->--}}
                     {{--<div class="swiper-scrollbar"></div>--}}
                 </div>
             </div>
-            <hr>
         </div>
     </div>
 
@@ -284,17 +433,15 @@
                             <div class="col-md-3 col-6">
                                 <div class="item">
                                     <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <div class="section-padding bg-theme">
+                                    <div class="section-padding">
                                         <div class="item-title">
                                             <a href="#" class="item-link"
                                                title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
-                                                pieceonepiecezzone pieceone pieceonene piece one pieceone piece one
-                                                pieceone
-                                                piece onepiece</a>
+                                                Boruto Boruto Boruto BorutoBorutoBorutovBorutoBorutoBoruto</a>
                                             <br>
                                             <a href="#" class="item-chapter-link"
                                                title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
-                                                1: </a>
+                                                1</a>
                                         </div>
                                     </div>
 
@@ -303,291 +450,178 @@
                             <div class="col-md-3 col-6">
                                 <div class="item">
                                     <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece">One Piece</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="Chapter 1">Chapter 1: Chapter 1: Chapter 1: Chapter 1: Chapter 1:
+                                                Chapter 1: Chapter 1: Chapter 1: Chapter 1: </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
                                 <div class="item">
                                     <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <div class="item">
-                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
-                                    <a href="#">Title</a>
-                                    <p>Chap</p>
-                                </div>
-                            </div>
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                                Boruto Boruto Boruto BorutoBorutoBorutovBorutoBorutoBoruto</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                                1</a>
+                                        </div>
+                                    </div>
 
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece">One Piece</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="Chapter 1">Chapter 1: Chapter 1: Chapter 1: Chapter 1: Chapter 1:
+                                                Chapter 1: Chapter 1: Chapter 1: Chapter 1: </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                                Boruto Boruto Boruto BorutoBorutoBorutovBorutoBorutoBoruto</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                                1</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece">One Piece</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="Chapter 1">Chapter 1: Chapter 1: Chapter 1: Chapter 1: Chapter 1:
+                                                Chapter 1: Chapter 1: Chapter 1: Chapter 1: </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                                Boruto Boruto Boruto BorutoBorutoBorutovBorutoBorutoBoruto</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                                1</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece">One Piece</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="Chapter 1">Chapter 1: Chapter 1: Chapter 1: Chapter 1: Chapter 1:
+                                                Chapter 1: Chapter 1: Chapter 1: Chapter 1: </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                                Boruto Boruto Boruto BorutoBorutoBorutovBorutoBorutoBoruto</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                                1</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece">One Piece</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="Chapter 1">Chapter 1: Chapter 1: Chapter 1: Chapter 1: Chapter 1:
+                                                Chapter 1: Chapter 1: Chapter 1: Chapter 1: </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/naruto.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piece one pieceone piece one pieceone piece one pieceone piece oneiece one pieceone piece one">
+                                                Boruto Boruto Boruto BorutoBorutoBorutovBorutoBorutoBoruto</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="one piece one pieceone piece one pieceonepiece pieceone piec">Chapter
+                                                1</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="item">
+                                    <img src="{{asset('pages/images/one-piece.jpg')}}" alt="" class="item-img-width">
+                                    <div class="section-padding">
+                                        <div class="item-title">
+                                            <a href="#" class="item-link"
+                                               title="one piece">One Piece</a>
+                                            <br>
+                                            <a href="#" class="item-chapter-link"
+                                               title="Chapter 1">Chapter 1: Chapter 1: Chapter 1: Chapter 1: Chapter 1:
+                                                Chapter 1: Chapter 1: Chapter 1: Chapter 1: </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -638,13 +672,27 @@
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 6,
         spaceBetween: 3,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        }, autoplay: {
+        autoplay: {
             delay: 20000,
             disableOnInteraction: false,
-        },
+        }, breakpoints: {
+            1024: {
+                slidesPerView: 6,
+                spaceBetween: 40,
+            },
+            768: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            }
+        }
     });
 
 </script>

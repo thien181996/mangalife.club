@@ -1,35 +1,54 @@
 /*Common here*/
 /*End Mega Menu*/
 body {
-    font-family: 'Roboto';
+    font-family: 'Arial';
+
 }
 
-.section-copyright, .section-manga-new, .section-slider {
+hr {
+    border-color: #2E3140;
+}
+
+.section-copyright, .section-manga-new, .section-slider, .section-report {
+}
+
+.section-navigation {
+    background: #f40009;
+}
+
+.section-copyright .container, .section-manga-new .container, .section-slider .container, .section-report .container {
+    padding-top: 10px;
+
+}
+
+main {
+    background: #f1f3f5;
+}
+
+.section-copyright {
     padding-top: 15px;
 }
 
-.bg-theme {
-    background: #FF9E1D !important;
-}
-
 .heading-title {
-    background: #FF9E1D;
-    color: #402707;
+    color: #212529;
     padding: 5px 15px;
     width: 100%;
 }
-
-
 
 .section-manga-new-sidebar {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /*End Common here*/
+.bg-theme {
+    background: #f40009 !important;
+}
 
 .section-navigation .btn.btn-outline-success {
     background: white;
-    color: black;
+    color: white;
+    border-radius: 50%;
+    padding-top: 10px;
 }
 
 .section-navigation .btn.btn-outline-success {
@@ -45,16 +64,59 @@ body {
 }
 
 .section-navigation .nav-item .nav-link {
-    color: #7F4F0E !important;
+    color: white !important;
+    font-size: 18px;
+}
+
+.section-navigation .nav-item.active {
+    color: white !important;
+    background: #DB0008;
+
 }
 
 .section-navigation .nav-item.active .nav-link {
-    color: #402707 !important;
+    color: white !important;
     font-weight: bold;
+
+}
+
+.section-navigation .nav-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.section-navigation .navbar {
+    padding: 0 1rem !important;
+}
+
+.section-navigation .manga-search {
+    border-radius: 50px;
+    background: #DB0008;
+    outline: none;
+    color: white;
+    border: none;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 0.8rem;
+}
+
+.section-navigation .manga-search-merge {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.section-navigation .manga-search-submit {
+    color: white;
+    position: absolute;
+    left: 14px;
+
 }
 
 /*Mega Menu*/
-
 .section-navigation .menu-large {
     position: static !important;
 }
@@ -145,6 +207,10 @@ body {
 /*New manga section*/
 /*// Small devices (landscape phones, 576px and up)*/
 /*New manga section -> item*/
+.item {
+    padding: 5px 0;
+}
+
 .item-img-width {
     width: 100%;
     min-height: 80px;
@@ -178,55 +244,55 @@ body {
 
 .section-padding {
     width: 100%;
-    padding: 5px 10px;
+    padding: 5px 5px;
 
 }
 
-.item-title {
-    width: calc(100% - 20px);
-    margin-left: 10px;
-    margin-right: 10px;
+.section-padding .item-title {
+    width: calc(100% - 10px);
+    margin-left: 5px;
+    margin-right: 5px;
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.bg-theme .item-link {
-    color: #402707 !important;
+.section-padding .item-link {
+    color: #212529 !important;
     font-weight: bold;
 }
 
-.bg-theme .item-chapter-link {
-    color: #402707 !important;
+.section-padding .item-chapter-link {
+    color: #868e96 !important;
 
 }
 
 /*end New manga section -> item*/
 @media (min-width: 576px) {
     .item-img-width {
-        min-height: 120px;
+        height: 120px;
     }
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
     .item-img-width {
-        min-height: 160px;
+        height: 120px;
     }
 }
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 1024px) {
     .item-img-width {
-        min-height: 160px;
+        height: 160px;
     }
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
     .item-img-width {
-        min-height: 260px;
+        min-height: 240px;
     }
 }
 
@@ -237,3 +303,6 @@ body {
     background: #212529;
     color: white;
 }
+
+
+

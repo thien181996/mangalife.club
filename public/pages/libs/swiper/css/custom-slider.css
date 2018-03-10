@@ -6,7 +6,7 @@
 
 .full-width {
     width: 100%;
-    max-height: 80px;
+    height: 100%;
 }
 
 .swiper-slide {
@@ -27,35 +27,9 @@
 
 .img-merge img {
     margin-top: 1px;
-    border: 0.5px #402707 solid;
 }
 
 /*// Extra small devices (portrait phones, less than 576px)*/
 /*// No media query since this is the default in Bootstrap*/
 
 /*// Small devices (landscape phones, 576px and up)*/
-
-@media (min-width: 576px) {
-    .full-width {
-        min-height: 120px;
-    }
-}
-
-/*// Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-    .full-width {
-        min-height: 160px;
-    }
-}
-
-/*// Large devices (desktops, 992px and up)*/
-@media (min-width: 1024px) {
-    .full-width {
-        min-height: 240px;
-    }
-}
-
-/*// Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
-
-}
