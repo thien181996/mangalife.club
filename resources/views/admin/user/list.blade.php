@@ -39,9 +39,9 @@
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" id="dropdownMenuButton">
                                 <i class="la la-ellipsis-h"></i>
-                            </button>
+                            </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
                                 <a class="dropdown-item" href="#"><i class="la la-bell"></i> Chỉnh sửa</a>
                                 <a class="dropdown-item" href="#"><i class="la la-cloud-upload"></i> Xóa</a>
