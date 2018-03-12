@@ -1,0 +1,105 @@
+.section-breadcrumb {
+    background: white;
+    margin-bottom: 5px;
+}
+
+.section-manga-new-sidebar {
+    background: white;
+}
+
+.section-breadcrumb .breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+.section-breadcrumb a {
+    color: #212529;
+}
+
+.section-detail-manga {
+    margin-top: 15px;
+}
+
+.section-detail-manga img {
+    width: 100%;
+    height: 100%;
+}
+
+.section-detail-manga a {
+    font-weight: 500;
+}
+
+.section-detail-manga .tags a::after {
+    content: ' ,'
+}
+
+.section-detail-manga .tags a:last-child::after {
+    content: '';
+}
+
+/*Rating Star*/
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+}
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+    color: #FFED85;
+}
+
+/* Comment*/
+.section-list-chapter-manga .media {
+    padding-top: 4px;
+}
+
+.section-list-chapter-manga .list-unstyled {
+    background: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.section-manga-info {
+    background: white;
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.section-list-chapter-manga hr {
+    border-color: #f7f7f9;
+}

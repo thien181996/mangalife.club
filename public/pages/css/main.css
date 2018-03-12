@@ -1,7 +1,7 @@
 /*Common here*/
 /*End Mega Menu*/
 body {
-    font-family: 'Arial';
+    font-family: 'Roboto';
 
 }
 
@@ -9,11 +9,38 @@ hr {
     border-color: #2E3140;
 }
 
-.section-copyright, .section-manga-new, .section-slider, .section-report {
+.section-navigation {
+    background: #f40009;
+
 }
 
 .section-navigation {
-    background: #f40009;
+}
+
+.section-manga-new-pagination {
+    padding-top: 10px;
+}
+
+.section-manga-new-pagination .pagination .page-item .page-link {
+    padding: 1rem 1.25rem;
+    line-height: 1;
+    background-color: #fff;
+    color: #f40009;
+}
+
+.section-manga-new-pagination .page-item.active .page-link {
+    border-color: #dee2e6;
+    font-weight: bold;
+}
+
+.section-manga-new-pagination .page-item:first-child .page-link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.section-manga-new-pagination .page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .section-copyright .container, .section-manga-new .container, .section-slider .container, .section-report .container {
@@ -31,7 +58,9 @@ main {
 
 .heading-title {
     color: #212529;
-    padding: 5px 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 16px;
     width: 100%;
 }
 
@@ -57,6 +86,11 @@ main {
     border-color: white;
 }
 
+.section-navigation .nav-item:hover {
+    color: white !important;
+    background: #DB0008;
+}
+
 .section-navigation .btn.btn-outline-success:hover {
     background: white;
     color: #f40009 !important;
@@ -65,7 +99,7 @@ main {
 
 .section-navigation .nav-item .nav-link {
     color: white !important;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .section-navigation .nav-item.active {
@@ -213,7 +247,7 @@ main {
 
 .item-img-width {
     width: 100%;
-    min-height: 80px;
+    height: 100%;
 }
 
 @keyframes ringring {
@@ -233,7 +267,7 @@ main {
     }
 }
 
-.item:hover, .swiper-slide:hover {
+.item:hover {
     -webkit-animation-name: ringring;
     animation-name: ringring;
     -webkit-animation-duration: 1s;
@@ -245,6 +279,7 @@ main {
 .section-padding {
     width: 100%;
     padding: 5px 5px;
+    background: #fff;
 
 }
 
@@ -270,30 +305,25 @@ main {
 
 /*end New manga section -> item*/
 @media (min-width: 576px) {
-    .item-img-width {
-        height: 120px;
-    }
+
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-    .item-img-width {
-        height: 120px;
-    }
+
 }
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 1024px) {
-    .item-img-width {
-        height: 160px;
+
+    .manga-search-merge {
+        float: right !important;
     }
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    .item-img-width {
-        min-height: 240px;
-    }
+
 }
 
 /*End New Manga Section*/

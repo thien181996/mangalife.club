@@ -21,12 +21,22 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: white;
+    background: #f40009;
     padding: 2.5px 5px;
+    color: white;
 }
 
 .img-merge img {
     margin-top: 1px;
+}
+
+.swiper-slide:hover {
+    -webkit-animation-name: ringring;
+    animation-name: ringring;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 /*// Extra small devices (portrait phones, less than 576px)*/

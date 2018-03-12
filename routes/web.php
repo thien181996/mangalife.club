@@ -17,6 +17,9 @@ Route::get('/panel/', function () {
 Route::get('/home', function () {
     return view('index');
 });
+Route::get('/manga-detail', function () {
+    return view('manga-detail');
+});
 
 
-Route::get('/panel/user','admin\UserController@listUser')->name('panel.listUser');
+Route::get('/panel/user', 'admin\UserController@listUser')->name('panel.listUser');
