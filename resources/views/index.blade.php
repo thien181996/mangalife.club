@@ -539,9 +539,9 @@
     <script>
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 6,
-            spaceBetween: 3,
+            spaceBetween: 20,
             autoplay: {
-                delay: 20000,
+                delay: 5000,
                 disableOnInteraction: false,
             }, breakpoints: {
                 1024: {

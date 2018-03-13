@@ -60,40 +60,156 @@
                         {{--<a class="nav-link" href="#">Đăng nhập / Đăng ký <span class="sr-only">(current)</span></a>--}}
                         {{--</li>--}}
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Đăng nhập</a>
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Đăng nhập</a>
                         </li>
+
+
                         <li class="dropdown menu-large nav-item"><a href="#" class="dropdown-toggle nav-link"
                                                                     data-toggle="dropdown"> Thể loại </a>
                             <ul class="dropdown-menu megamenu">
                                 <li class="dropdown-item">
                                     <div class="row">
-                                        <div class="col-md-6 col-lg-3 text-center">
-                                            <div class="card">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="http://placehold.it/150x120">
-                                                </a>
-                                            </div>
+                                        <div class="col-6 col-md-2 type-manga"><a href="the-loai/the-loai-16-40.html">
+                                                16+</a>
                                         </div>
-                                        <div class="col-md-6 col-lg-3 text-center">
-                                            <div class="card">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="http://placehold.it/150x120">
-                                                </a>
-                                            </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-action-41.html">Action</a>
                                         </div>
-                                        <div class="col-md-6 col-lg-3 text-center">
-                                            <div class="card">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="http://placehold.it/150x120">
-                                                </a>
-                                            </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-adventure-42.html">Adventure</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-award-winning-43.html">Award
+                                                winning</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-comedy-44.html">Comedy</a>
                                         </div>
-                                        <div class="col-md-6 col-lg-3 text-center">
-                                            <div class="card">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="http://placehold.it/150x120">
-                                                </a>
-                                            </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-comic-45.html">Comic</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-cooking-46.html">Cooking</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-demons-47.html">Demons</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-doujinshi-48.html">Doujinshi</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-drama-49.html">Drama</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-ecchi-50.html">Ecchi</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-fantasy-51.html">Fantasy</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-gender-bender-52.html">Gender
+                                                bender</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-giong-game-53.html">Giống
+                                                game</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-hay-nhuc-nhoi-54.html">Hay Nhức
+                                                Nhói</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-historical-55.html">Historical</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-horror-56.html">Horror</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-huyen-huyen-57.html">Huyền
+                                                Huyễn</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-magic-58.html">Magic</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-manga-59.html">Manga</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-manhua-60.html">Manhua</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-manhwa-61.html">Manhwa</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-martial-arts-62.html">
+                                                Martial
+                                                Arts</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-mature-63.html">Mature</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-mecha-64.html">Mecha</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-medical-65.html">Medical</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-military-66.html">Military</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-music-67.html">Music</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-mystery-68.html">Mystery</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-one-shot-69.html">One
+                                                shot</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-oneshot-70.html">Oneshot</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-psychological-71.html">Psychological</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-romance-72.html">Romance</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-school-life-73.html">School
+                                                Life</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-sci-fi-74.html">Sci-Fi</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-seinen-75.html">Seinen</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-shoujo-76.html">Shoujo</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-shoujo-ai-77.html">Shoujo
+                                                Ai</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-shounen-78.html">Shounen</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-shounen-ai-79.html">Shounen
+                                                Ai</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-slice-of-life-80.html">Slice of
+                                                Life</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a href="the-loai/the-loai-smut-81.html">Smut</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-sports-82.html">Sports</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-staff-pick-83.html">Staff
+                                                pick</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-super-power-84.html">Super
+                                                power</a></div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-supernatural-85.html">Supernatural</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-tragedy-86.html">Tragedy</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-trap-crossdressing-87.html">
+                                                Trap (Crossdressing)</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-vncomic-88.html">VNComic</a>
+                                        </div>
+                                        <div class="col-6 col-md-2 type-manga"><a
+                                                    href="the-loai/the-loai-vampire-89.html">Vampio</a>
                                         </div>
                                     </div>
                                 </li>
@@ -143,6 +259,99 @@
         </div>
     </div>
 </footer>
+<div class="modal fade" id="login" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title-login">Đăng nhập</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" id="modal-login">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Tài khoản</b></label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Nhập tên tài khoản">
+                        <small id="emailHelp" class="form-text text-muted">Sử dụng tài khoản hoặc địa chỉ email</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Mật khẩu</b></label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu"
+                               aria-describedby="passwordHelp">
+                        <small id="passwordHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Lưu mật khẩu</label>
+
+
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-login"><span class="fa fa-user"></span> Đăng nhập</button>
+                    <br>
+                    <br>
+                    <p>
+                        <a href="javascript:;" id="change-forgot-password" class="m-link">Quên mật khẩu</a> |
+                        <a href="javascript:;" id="change-register" class="m-link">Tạo tài khoản mới</a>
+                    </p>
+                </form>
+                <form action="" id="modal-register" style="display: none">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Tên tài khoản</b> (<span style="color:red"> * </span>)
+                        </label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Nhập tên tài khoản">
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Email</b> (<span style="color:red"> * </span>)</label>
+                        <input type="email" class="form-control" placeholder="Nhập email"
+                               aria-describedby="passwordHelp">
+                        <small id="passwordHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Mật khẩu</b> (<span style="color:red"> * </span>)</label>
+                        <input type="password" class="form-control" placeholder="Nhập mật khẩu"
+                               aria-describedby="passwordHelp">
+                        <small id="passwordHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Nhập lại Mật khẩu</b> (<span style="color:red"> * </span>)</label>
+                        <input type="password" class="form-control" placeholder="Nhập lại mật khẩu"
+                               aria-describedby="passwordHelp">
+                        <small id="passwordHelp" class="form-text text-muted"></small>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-login back-to-login"><span
+                                class="fa fa-chevron-circle-left"></span> Trở lại
+                    </button>
+                    <button type="submit" class="btn btn-login"><span class="fa fa-user-plus"></span> Đăng ký</button>
+                    <br>
+                </form>
+                <form action="" id="modal-forgot-password" style="display: none">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Nhập email</b></label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Nhập tên tài khoản">
+                        <small id="emailHelp" class="form-text text-muted">Bạn hãy nhập email tài khoản của bạn , chúng
+                            tôi sẽ gửi
+                            lại yêu cầu lấy lại mật khẩu về email của bạn
+                        </small>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-login back-to-login"><span
+                                class="fa fa-chevron-circle-left"></span> Trở lại
+                    </button>
+                    <button type="submit" class="btn btn-login"><span class="fa fa-support"></span> Lấy lại mật khẩu
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--begin::Base Scripts -->
 <script src="{{ asset('assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
@@ -154,11 +363,31 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $("#change-forgot-password").click(function () {
+        $("#modal-login").hide();
+        $("#modal-title-login").text('Yêu cầu lấy lại mật khẩu');
+        $("#modal-forgot-password").show();
+    });
+    $("#change-register").click(function () {
+        $("#modal-login").hide();
+        $("#modal-title-login").text('Đăng ký tài khoản');
+        $("#modal-register").show();
+    });
+    $(".back-to-login").click(function () {
+        $("#modal-register").hide();
+        $("#modal-title-login").text('Đăng nhập');
+        $("#modal-forgot-password").hide();
+        $("#modal-login").show();
+    });
+    $("nav .nav-link").on("click", function () {
+        $("nav").find(".active").removeClass("active");
+        $(this).parent().addClass("active");
+        console.log('???');
+    });
 </script>
 {{--Custom JS Here--}}
 
 @yield('js')
-
 </body>
 
 </html>
