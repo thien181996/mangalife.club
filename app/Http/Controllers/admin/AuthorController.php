@@ -43,7 +43,7 @@ class AuthorController extends Controller
         } else {
             $author = new Author();
         }
-//        //upload image
+        //upload image
         if($rq->hasFile('author_cover'))
         {
             $file = $rq->file('author_cover');

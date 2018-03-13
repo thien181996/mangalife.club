@@ -37,3 +37,21 @@ Route::get('/panel/user','admin\UserController@listUser')->name('panel.listUser'
     Route::post('/panel/translate_group/getSlug','admin\TranslateGroupController@getSlugTranslateGroup')->name('panel.getSlugTranslateGroup');
     Route::get('/panel/translate_group/stream/{fileDir}/{fileName}','admin\TranslateGroupController@streamTranslateGroup')->name('panel.streamTranslateGroup');
 //END : TRANSLATE GROUP
+//START : CATEGORY
+    Route::get('/panel/category','admin\CategoryController@listCategory')->name('panel.listCategory');
+    Route::get('/panel/category/create','admin\CategoryController@createCategory')->name('panel.createCategory');
+    Route::get('/panel/category/edit/{id}','admin\CategoryController@editCategory')->name('panel.editCategory');
+    Route::get('/panel/category/delete/{id}','admin\CategoryController@deleteCategory')->name('panel.deleteCategory');
+    Route::post('/panel/category/store','admin\CategoryController@storeCategory')->name('panel.storeCategory');
+    Route::post('/panel/category/getSlug','admin\CategoryController@getSlugCategory')->name('panel.getSlugCategory');
+//END : CATEGORY
+//START : MANGA
+    Route::get('/panel/manga','admin\MangaController@listManga')->name('panel.listManga');
+    Route::get('/panel/manga/create','admin\MangaController@createManga')->name('panel.createManga');
+    Route::get('/panel/manga/edit/{id}','admin\MangaController@editManga')->name('panel.editManga');
+    Route::get('/panel/manga/delete/{id}','admin\MangaController@deleteManga')->name('panel.deleteManga');
+    Route::post('/panel/manga/store','admin\MangaController@storeManga')->name('panel.storeManga');
+    Route::post('/panel/manga/getSlug','admin\MangaController@getSlugManga')->name('panel.getSlugManga');
+    Route::post('/panel/manga/ajax','admin\MangaController@ajaxManga')->name('panel.ajaxManga');
+    Route::get('/panel/manga/stream/{fileDir}/{fileName}','admin\MangaController@streamManga')->name('panel.streamManga');
+//END : MANGA

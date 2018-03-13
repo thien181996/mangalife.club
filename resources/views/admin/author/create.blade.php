@@ -66,7 +66,7 @@
                                 <label class="">
                                     Đường dẫn *
                                 </label>
-                                <input id="author_slug" name="author_slug" type="text" class="form-control m-input" placeholder="Nhập đường dẫn" value="{{ old('author_description') }}" >
+                                <input id="author_slug" name="author_slug" type="text" class="form-control m-input" placeholder="Nhập đường dẫn" value="{{ old('author_slug') }}" >
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
                                         {{$errors->first('author_slug')}}
