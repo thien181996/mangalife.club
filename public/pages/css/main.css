@@ -388,6 +388,27 @@ main {
 
 }
 
+.social a, .social {
+    color: white
+}
+
+.social {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.social .btn-logout {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+.social .fa-globe {
+    color: #DB0008;
+}
+
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

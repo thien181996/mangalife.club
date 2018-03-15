@@ -173,7 +173,7 @@
                                                 <textarea class="form-control" id="exampleFormControlTextarea1"
                                                           rows="3" placeholder="Bình luận vào đây..."></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary pull-right"
+                                            <button type="submit" class="btn btn-login pull-right"
                                                     style="font-family: 'Roboto';   ">Gửi bình luận
                                             </button>
                                         </form>

@@ -103,3 +103,16 @@
 .section-list-chapter-manga hr {
     border-color: #f7f7f9;
 }
+
+.section-list-chapter-manga .btn-login {
+    background: #f40009;
+    border-color: transparent;
+    border-radius: 0;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.section-list-chapter-manga .btn-login:hover {
+    background: #DB0008;
+}
+

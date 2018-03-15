@@ -5,7 +5,8 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no,user-scalable=no">
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
@@ -59,6 +60,7 @@
                         {{--<li class="nav-item active">--}}
                         {{--<a class="nav-link" href="#">Đăng nhập / Đăng ký <span class="sr-only">(current)</span></a>--}}
                         {{--</li>--}}
+
                         <li class="nav-item active">
                             <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Đăng nhập</a>
                         </li>
@@ -225,12 +227,16 @@
                         {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
                         {{--</li>--}}
 
+                        <form class="form-inline manga-search-merge pull-left">
+                            <span class="fa fa-search manga-search-submit"></span>
+                            <input class="form-control mr-sm-2 manga-search" type="search"
+                                   aria-label="Search">
+                        </form>
+                        <li class="social">
+                            <i class="flaticon-alert-1"></i>
+                            <i class="flaticon-user"></i>
+                        </li>
                     </ul>
-                    <form class="form-inline manga-search-merge pull-left">
-                        <span class="fa fa-search manga-search-submit"></span>
-                        <input class="form-control mr-sm-2 manga-search" type="search"
-                               aria-label="Search">
-                    </form>
 
                 </div>
             </nav>

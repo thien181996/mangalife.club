@@ -17,8 +17,12 @@ Route::get('/panel/', function () {
 Route::get('/home', function () {
     return view('index');
 });
+
 Route::get('/manga-detail', function () {
     return view('manga-detail');
+});
+Route::get('/manga-read', function () {
+    return view('manga-read');
 });
 
 
