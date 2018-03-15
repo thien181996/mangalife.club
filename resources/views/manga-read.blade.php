@@ -196,6 +196,8 @@
                              alt="Generic placeholder image" style="width:35px;height: 35px;">
                         <div class="media-body" style="font-size:12px">
                             <h6 class="mt-0">Sun Lord Đẹp Trai</h6>
+                            <small>21/11/2018</small>
+                            <br>
                             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                             ante
                             sollicitudin.
@@ -206,6 +208,8 @@
                              alt="Generic placeholder image" style="width:35px;height: 35px;">
                         <div class="media-body" style="font-size:12px">
                             <h6 class="mt-0">Thiện Phan Ngố</h6>
+                            <small>11/11/2018</small>
+                            <br>
                             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                             ante
                             sollicitudin.
@@ -216,6 +220,8 @@
                              alt="Generic placeholder image" style="width:35px;height: 35px;">
                         <div class="media-body" style="font-size:12px">
                             <h6 class="mt-0">Tiến tiền tỷ</h6>
+                            <small>11/11/2018</small>
+                            <br>
                             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                             ante
                             sollicitudin.
@@ -226,6 +232,8 @@
                              alt="Generic placeholder image" style="width:35px;height: 35px;">
                         <div class="media-body" style="font-size:12px">
                             <h6 class="mt-0">Hùng dát vàng</h6>
+                            <small>11/11/2018</small>
+                            <br>
                             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                             ante
                             sollicitudin.
