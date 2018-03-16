@@ -14,6 +14,7 @@ class CreateRatesTable extends Migration
     public function up()
     {
         Schema::create('rates', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('manga_id');
             $table->integer('user_id');
             $table->integer('rate_score');

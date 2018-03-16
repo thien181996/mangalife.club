@@ -14,6 +14,7 @@ class CreateTranslateGroupMangasTable extends Migration
     public function up()
     {
         Schema::create('translate_group_mangas', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('manga_id');
             $table->integer('group_id');
             $table->timestamps();

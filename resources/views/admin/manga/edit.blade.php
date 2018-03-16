@@ -53,7 +53,7 @@
                                 <div class="view_create_div_manga_cover">
                                     <label for="view_create_input_manga_cover">
                                         <p>Kích thước chuẩn 360x360</p>
-                                        <img style="max-height: 360px" id="view_create_img_manga_cover" src="{{ asset('panel/manga/stream/1ZJUATLfnuDHUiJFIT1eg5oMDDDDQsxof/' . $manga->manga_cover) }}" width="100%" alt="{{ $manga->manga_name }}">
+                                        <img style="max-height: 360px" id="view_create_img_manga_cover" src="{{ asset('panel/manga/stream/' . $manga->manga_path . '/' . $manga->manga_cover) }}" width="100%" alt="{{ $manga->manga_name }}">
                                     </label>
                                     <input id="view_create_input_manga_cover" name="manga_cover" type="file" class="form-control m-input m--hide" accept="">
                                 </div>
@@ -118,7 +118,6 @@
                             <div class="col-lg-6 div_group">
                                 <select class="form-control m-input" id="group_id" multiple>
                                     @foreach($translate_groups as $translate_group)
-
                                         <option value="{{ $translate_group->id }}" @if(in_array($translate_group->id,$arr_groups)) selected  @endif >{{ $translate_group->group_name }}</option>
                                     @endforeach
                                 </select>

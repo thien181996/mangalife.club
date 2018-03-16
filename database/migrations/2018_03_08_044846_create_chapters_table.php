@@ -18,6 +18,7 @@ class CreateChaptersTable extends Migration
             $table->string('chapter_name',191);
             $table->text('chapter_description')->nullable();
             $table->integer('chapter_view')->default(0);
+            $table->integer('chapter_status');
             $table->text('chapter_slug');
             $table->integer('manga_id');
             $table->timestamps();

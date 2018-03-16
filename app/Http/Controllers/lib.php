@@ -35,4 +35,32 @@ class lib
             //'Content-disposition' => 'attachment; filename="'.$filename.'"', // force download?
         ]);
     }
+
+    public function createFolderGoogleDrive($folderDir,$folderName)
+    {
+        $dir = $folderDir;
+        $recursive = false; // Get subdirectories also?
+        $contents = collect(Storage::cloud()->listContents($dir, $recursive));
+        $dir = $contents->where('type', '=', 'dir')
+            ->where('filename', '=', $folderName)
+            ->first(); // check trùng lặp folder
+//        dd($dir['path']);
+                if (!$dir) {
+            Storage::cloud()->makeDirectory($folderDir.'/'.$folderName);
+            return true;
+        }
+    }
+
+    public function getBaseNameFolderGoogleDrive($path, $folderName)
+    {
+        $dir = $path;
+        $recursive = false; // lấy tất cả các file tồn tại cả trong folder tính từ $dir
+        $contents = collect(Storage::cloud()->listContents($dir, $recursive));
+        //return $contents->where('type', '=', 'dir'); // directories
+        $result = $contents->where('type', '=', 'dir')->where('filename','=',$folderName)->first();
+
+        return $result['basename']; // files
+    }
+
+
 }

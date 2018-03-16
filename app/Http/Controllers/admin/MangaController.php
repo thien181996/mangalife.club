@@ -46,7 +46,14 @@ class MangaController extends Controller
              $manga = Manga::find($isObj);
         } else {
             $manga = new Manga();
-
+            $this->lib->createFolderGoogleDrive($path_manga,$rq->manga_slug);
+            $baseName = $this->lib->getBaseNameFolderGoogleDrive($path_manga,$rq->manga_slug);
+        }
+        if($baseName)
+        {
+            $manga->manga_path = $baseName;
+        } else {
+            $baseName = $manga->manga_path;
         }
         //upload image
         if($rq->hasFile('manga_cover'))
@@ -54,7 +61,7 @@ class MangaController extends Controller
             $file = $rq->file('manga_cover');
             $fileName =  uniqid() . $file->getClientOriginalName();
             $fileData = File::get($file->path());
-            Storage::cloud()->put($path_manga . '/' .$fileName,$fileData);
+            Storage::cloud()->put($baseName . '/' .$fileName,$fileData);
             $manga->manga_cover = $fileName;
         }
         //set value to obj
@@ -129,7 +136,7 @@ class MangaController extends Controller
                     return response(['status'=>true]);
                 }
             default:
-                return response(['status'=>"nothing happen"]);
+                return response(['error'=>"nothing"]);
         }
 
     }

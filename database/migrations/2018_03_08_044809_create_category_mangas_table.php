@@ -14,6 +14,7 @@ class CreateCategoryMangasTable extends Migration
     public function up()
     {
         Schema::create('category_mangas', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('manga_id');
             $table->integer('category_id');
             $table->timestamps();

@@ -14,6 +14,7 @@ class CreateChapterMangasTable extends Migration
     public function up()
     {
         Schema::create('chapter_mangas', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('chapter_id');
             $table->integer('chapter_sort');
             $table->text('chapter_image_url');

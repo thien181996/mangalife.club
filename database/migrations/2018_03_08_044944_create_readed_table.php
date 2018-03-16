@@ -14,6 +14,7 @@ class CreateReadedTable extends Migration
     public function up()
     {
         Schema::create('readed', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('manga_id');
             $table->integer('chapter_id');
             $table->integer('user_id');

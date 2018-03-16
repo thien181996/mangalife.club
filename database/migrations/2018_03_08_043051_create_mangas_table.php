@@ -23,6 +23,7 @@ class CreateMangasTable extends Migration
             $table->integer('manga_view')->default(0);
             $table->text('manga_meta_title')->nullable();
             $table->text('manga_meta_description')->nullable();
+            $table->text('manga_path');
             $table->timestamps();
         });
     }

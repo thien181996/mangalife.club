@@ -17,7 +17,6 @@ Route::get('/panel/', function () {
 Route::get('/home', function () {
     return view('index');
 });
-
 Route::get('/panel/user','admin\UserController@listUser')->name('panel.listUser');
 //START : AUTHOR
     Route::get('/panel/author','admin\AuthorController@listAuthor')->name('panel.listAuthor');
@@ -55,3 +54,14 @@ Route::get('/panel/user','admin\UserController@listUser')->name('panel.listUser'
     Route::post('/panel/manga/ajax','admin\MangaController@ajaxManga')->name('panel.ajaxManga');
     Route::get('/panel/manga/stream/{fileDir}/{fileName}','admin\MangaController@streamManga')->name('panel.streamManga');
 //END : MANGA
+//START : CHAPTER
+    Route::get('/panel/chapter','admin\ChapterController@listChapter')->name('panel.listChapter');
+    Route::get('/panel/chapter/create','admin\ChapterController@createChapter')->name('panel.createChapter');
+    Route::get('/panel/chapter/edit/{id}','admin\ChapterController@editChapter')->name('panel.editChapter');
+    Route::get('/panel/chapter/delete/{id}','admin\ChapterController@deleteChapter')->name('panel.deleteChapter');
+    Route::post('/panel/chapter/store','admin\ChapterController@storeChapter')->name('panel.storeChapter');
+    Route::post('/panel/chapter/getSlug','admin\ChapterController@getSlugChapter')->name('panel.getSlugChapter');
+    Route::post('/panel/chapter/ajax','admin\ChapterController@ajaxChapter')->name('panel.ajaxChapter');
+    Route::post('/panel/chapter/ajaxStore','admin\ChapterController@ajaxStoreChapter')->name('panel.ajaxStoreChapter');
+    Route::get('/panel/chapter/stream/{fileDir}/{fileName}','admin\ChapterController@streamChapter')->name('panel.streamChapter');
+//END : CHAPTER
