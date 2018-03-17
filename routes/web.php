@@ -24,6 +24,17 @@ Route::get('/manga-detail', function () {
 Route::get('/manga-read', function () {
     return view('manga-read');
 });
-
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/manga-category', function () {
+    return view('manga-category');
+});
+Route::get('/manga-author', function () {
+    return view('manga-author');
+});
+Route::get('/manga-translate', function () {
+    return view('manga-translate');
+});
 
 Route::get('/panel/user', 'admin\UserController@listUser')->name('panel.listUser');

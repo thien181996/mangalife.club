@@ -370,7 +370,7 @@ main {
     border-color: #DB0008 !important;
 }
 
-.modal .btn-login {
+.modal .btn-login, .list-unstyled button {
     background: #f40009;
     border-color: transparent;
     border-radius: 0;
@@ -383,9 +383,8 @@ main {
     border: 0 !important;
 }
 
-.modal .btn-login:hover {
+.modal .btn-login:hover, .list-unstyled button:hover {
     background: #DB0008;
-
 }
 
 .social a, .social {
@@ -411,4 +410,20 @@ main {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.list-unstyled {
+    background: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+
+}
+
+.list-unstyled .form-control {
+    border-color: #DB0008;
+    border-radius: 0;
+
 }
