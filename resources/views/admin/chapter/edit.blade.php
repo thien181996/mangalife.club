@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('title','Chỉnh sửa Chương')
 @section('content')
-    <div class="row">
+    <div class="row" onload="view_edit_load_img()">
         <div class="col-lg-12">
             <div class="m-portlet">
                 <div class="m-portlet__head">

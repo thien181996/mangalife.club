@@ -12,6 +12,7 @@ use App\Http\Requests\admin\TranslateGroupRequest;
 use App\TranslateGroup;
 use File;
 use Storage;
+use App\Setting;
 
 class TranslateGroupController extends Controller
 {
@@ -51,7 +52,7 @@ class TranslateGroupController extends Controller
     public function storeTranslateGroup(TranslateGroupRequest $rq)
     {
 //        dd($rq->all());
-        $path_group = '1SAf73FFaIe04FZeHsVYqmQ7p2rM9htb8';
+        $path_group = Setting::all()->first()->path_group;
         //set value id from rq
         $isObj = $rq->group_id;
         if($isObj)

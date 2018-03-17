@@ -17,7 +17,7 @@ class CreateDonateHistoryTable extends Migration
             $table->increments('id');
             $table->integer('donate_type');
             $table->text('donate_content');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }

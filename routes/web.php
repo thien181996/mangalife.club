@@ -13,7 +13,7 @@
 
 Route::get('/panel/', function () {
     return view('admin.layouts.main');
-});
+})->name('panel');
 Route::get('/home', function () {
     return view('index');
 });
@@ -65,3 +65,33 @@ Route::get('/panel/user','admin\UserController@listUser')->name('panel.listUser'
     Route::post('/panel/chapter/ajaxStore','admin\ChapterController@ajaxStoreChapter')->name('panel.ajaxStoreChapter');
     Route::get('/panel/chapter/stream/{fileDir}/{fileName}','admin\ChapterController@streamChapter')->name('panel.streamChapter');
 //END : CHAPTER
+//START : COMMENT
+    Route::get('/panel/comment','admin\CommentController@listComment')->name('panel.listComment');
+    Route::get('/panel/comment/delete/{id}','admin\CommentController@deleteComment')->name('panel.deleteComment');
+//END : COMMENT
+//START : RATE
+    Route::get('/panel/rate','admin\RateController@listRate')->name('panel.listRate');
+    Route::get('/panel/rate/delete/{id}','admin\RateController@deleteRate')->name('panel.deleteRate');
+//END : RATE
+//START : READED
+    Route::get('/panel/readed','admin\ReadedController@listReaded')->name('panel.listReaded');
+//END : READED
+//START : CHAPTER
+    Route::get('/panel/notification','admin\NotificationController@listNotification')->name('panel.listNotification');
+    Route::get('/panel/notification/create','admin\NotificationController@createNotification')->name('panel.createNotification');
+    Route::get('/panel/notification/delete/{id}','admin\NotificationController@deleteNotification')->name('panel.deleteNotification');
+    Route::post('/panel/notification/store','admin\NotificationController@storeNotification')->name('panel.storeNotification');
+//END : CHAPTER
+////START : REPORT
+    Route::get('/panel/report','admin\ReportController@listReport')->name('panel.listReport');
+//END : DONATE
+//START : REPORT
+    Route::get('/panel/donate','admin\DonateController@listDonate')->name('panel.listDonate');
+//END : DONATE
+//START : STATISTIC
+    Route::get('/panel/statistic','admin\StatisticController@listStatistic')->name('panel.listStatistic');
+//END : STATISTIC
+//START : SETTING
+    Route::get('/panel/setting','admin\SettingController@editSetting')->name('panel.editSetting');
+    Route::post('/panel/setting/store','admin\SettingController@storeSetting')->name('panel.storeSetting');
+//END : SETTING

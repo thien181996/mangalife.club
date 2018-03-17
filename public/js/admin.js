@@ -413,16 +413,19 @@ $('.manga_delete').each((i,v)=>{
             }
         });
     });
-    var img_arr = $('#chapter_img_arr').val();
-    var jsonData = JSON.parse(img_arr);
-    console.log(jsonData.length);
-    for(let i = 0 ; i < jsonData.length ; i++)
-    {
-        var src = '/panel/chapter/stream/'+jsonData[i]['chapter_image_url']+'/'+jsonData[i]['chapter_image_name'];
-        $('#div_chapter_img_'+jsonData[i]['id']).attr('src',src);
-        function loadImg()
-        {
 
+    function view_edit_load_img() {
+        var img_arr = $('#chapter_img_arr').val();
+        var jsonData = JSON.parse(img_arr);
+        console.log(jsonData.length);
+        for(let i = 0 ; i < jsonData.length ; i++)
+        {
+            var src = '/panel/chapter/stream/'+jsonData[i]['chapter_image_url']+'/'+jsonData[i]['chapter_image_name'];
+            $('#div_chapter_img_'+jsonData[i]['id']).attr('src',src);
+            function loadImg()
+            {
+
+            }
         }
     }
 
@@ -437,3 +440,38 @@ $('.chapter_delete').each((i,v)=>{
     });
 });
 // END : view_chapter_list
+// START : view_comment_list
+$('.comment_delete').each((i,v)=>{
+    $(v).click(()=>{
+        $('#modal_comment_delete').modal('show');
+        $('#modal_comment_delete_content').html('Bạn có chắc chắn muốn xóa bình luận có nội dung <strong>'+ $(v).attr('comment_content')+'</strong> không?');
+        $('#modal_comment_delete_button').attr('href',$(v).attr('value'));
+    });
+});
+// END : view_comment_list
+// START : view_comment_list
+$('.rate_delete').each((i,v)=>{
+    $(v).click(()=>{
+        $('#modal_rate_delete').modal('show');
+        $('#modal_rate_delete_content').html('Bạn có chắc chắn muốn xóa đánh giá này không?');
+        $('#modal_rate_delete_button').attr('href',$(v).attr('value'));
+    });
+});
+// END : view_comment_list
+// START : view_notification_create
+    $('#user_id').select2();
+    $('textarea#mailbox_content').maxlength({
+        threshold: 5,
+        warningClass: "m-badge m-badge--primary m-badge--rounded m-badge--wide",
+        limitReachedClass: "m-badge m-badge--brand m-badge--rounded m-badge--wide"
+    });
+// END : view_notification_create
+// START : view_notification_list
+$('.notification_delete').each((i,v)=>{
+    $(v).click(()=>{
+        $('#modal_notification_delete').modal('show');
+        $('#modal_notification_delete_content').html('Bạn có chắc chắn muốn xóa thông báo này không?');
+        $('#modal_notification_delete_button').attr('href',$(v).attr('value'));
+    });
+});
+// END : view_notification_list

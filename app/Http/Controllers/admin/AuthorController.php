@@ -11,6 +11,7 @@ use App\Http\Controllers\lib;
 use App\Author;
 use File;
 use Storage;
+use App\Setting;
 
 class AuthorController extends Controller
 {
@@ -34,7 +35,7 @@ class AuthorController extends Controller
     public function storeAuthor(AuthorRequest $rq)
     {
 //        dd($rq->all());
-        $path_author = '1gj4NccLPmvWxSTK5n2YQNXmiCXjQxx53';
+        $path_author = Setting::all()->first()->path_author;
         //set value id from rq
         $isObj = $rq->author_id;
         if($isObj)

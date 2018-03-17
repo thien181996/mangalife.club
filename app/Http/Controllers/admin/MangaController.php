@@ -6,6 +6,7 @@ use App\Author;
 use App\AuthorManga;
 use App\Category;
 use App\CategoryManga;
+use App\Setting;
 use App\TranslateGroup;
 use App\TranslateGroupManga;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class MangaController extends Controller
     //insert obj to database
     public function storeManga(MangaRequest $rq)
     {
-        $path_manga = '1ZJUATLfnuDHUiJFIT1eg5oMDDDDQsxof';
+        $path_manga = Setting::all()->first()->path_manga;
         $isObj = $rq->manga_id;
         if($isObj)
         {
