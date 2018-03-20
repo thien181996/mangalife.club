@@ -25,12 +25,47 @@
                 </div>
             </div>
             <div class="m-portlet__body">
+
+                <div class="alert alert-brand">
+                    <h5>Chú thích</h5>
+                    <span class="m-badge m-badge--danger">A</span> Quản trị viên
+                    <span class="m-badge m-badge--info">M</span> Kiểm duyệt viên
+                    <span class="m-badge m-badge--primary">M</span> Thành viên
+                    <span class="m-badge m-badge--metal">B</span> Bị cấm
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-4" >
+                                <div class="m-loader--primary m-loader--right div_search" style="position: relative;" >
+                                    <input type="text" class="form-control m--input input-search-user" style="padding: 0.65rem 10px;" placeholder="Nhập email cần tìm kiếm" onblur="enableHide()">
+                                    <div class="m--hide div_search_hide" style="width: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: absolute;background: #ffffff;padding:5px 0 5px 0">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 m--align-right">
+                        <a href="{{ route('panel.updateRoutersModule') }}" class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
+                            <span>
+                                <i class="la la-refresh"></i>
+                                <span>
+                                    Cập nhật Module
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">Tài khoản</th>
+                        <th scope="col">Tên thành viên</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Hành động</th>
+                        <th scope="col" class="text-center">Loại tài khoản</th>
+                        <th scope="col" class="text-center">Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,14 +73,19 @@
                     <tr>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>
+                        <td class="text-center">
+                            @if($user->getRoleId() == 1)<span class="m-badge m-badge--danger">A</span>@endif
+                            @if($user->getRoleId() == 2)<span class="m-badge m-badge--info">M</span>@endif
+                            @if($user->getRoleId() == 3)<span class="m-badge m-badge--primary">M</span>@endif
+                            @if($user->getRoleId() == 4)<span class="m-badge m-badge--metal">B</span>@endif
+                        </td>
+                        <td class="text-center">
                             <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" id="dropdownMenuButton">
                                 <i class="la la-ellipsis-h"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                <a class="dropdown-item" href="#"><i class="la la-bell"></i> Chỉnh sửa</a>
-                                <a class="dropdown-item" href="#"><i class="la la-cloud-upload"></i> Xóa</a>
-                                <a class="dropdown-item" href="#"><i class="la la-cog"></i> Something else</a>
+                                <a class="dropdown-item" href="{{ route('panel.editUser',['id'=>$user->id]) }}"><i class="la la-edit"></i> Chỉnh sửa</a>
+                                <a class="dropdown-item user_delete" href="{{ route('panel.deleteUser',['id'=>$user->id]) }}"><i class="la la-lock"></i> Khóa tài khoản</a>
                             </div>
                         </td>
                     </tr>
@@ -58,3 +98,4 @@
     </div>
 </div>
 @endsection
+<input type="hidden" id="routeAjaxUser" value="{{ route('panel.ajaxUser') }}">

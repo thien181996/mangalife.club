@@ -4,7 +4,16 @@ body{
 .btn{
     font-family: sans-serif, Arial !important;
 }
-/* START : view_author_create */
+.item-search{
+    display: block;
+    padding: 5px 10px;
+}
+.item-search:hover{
+    background: #ccc;
+
+}
+
+    /* START : view_author_create */
 .view_create_div_author_cover > input
 {
     /*display: none;*/

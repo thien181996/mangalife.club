@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getRoleId()
+    {
+        $role_id = RoleUser::where('user_id',$this->id)->first()->role_id;
+        return $role_id;
+    }
 }

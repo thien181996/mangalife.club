@@ -10,6 +10,31 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+    var toggleShow = false;
+    function togglePassword(e)
+    {
+        if(toggleShow)
+        {
+            toggleShow = false;
+            $('#password').attr('type','password');
+            $('.la-eye').addClass('la-eye-slash');
+            $('.la-eye-slash').removeClass('la-eye');
+        } else {
+            toggleShow = true;
+            $('#password').attr('type','text');
+            $('.la-eye-slash').addClass('la-eye');
+            $('.la-eye').removeClass('la-eye-slash');
+        }
+    }
+    function enableHide() {
+        setInterval(function () {
+            $('.div_search_hide').addClass('m--hide');
+        },3000);
+
+    }
+    function editUser(e) {
+        location.href = "/panel/user/edit/" + $(e).attr('data');
+    }
 // END : FUNCTION
 // START : ROUTE
     var routeGetSlugAuthor = $('#routeGetSlugAuthor').val();
@@ -21,6 +46,7 @@
     var routeAjaxChapter = $('#routeAjaxChapter').val();
     var routeAjaxStoreChapter = $('#routeAjaxStoreChapter').val();
     var routeAjaxModuleAction = $('#routeAjaxModuleAction').val();
+    var routeAjaxUser = $('#routeAjaxUser').val();
 // END : ROUTE
 // START : view_author_create, view_author_edit
     $('textarea#author_description').maxlength({
@@ -524,3 +550,41 @@ $('.notification_delete').each((i,v)=>{
         });
     });
 // END : view_action_edit
+// START : view_user_edit
+    $('input#password').maxlength({
+        threshold: 5,
+        warningClass: "m-badge m-badge--primary m-badge--rounded m-badge--wide",
+        limitReachedClass: "m-badge m-badge--brand m-badge--rounded m-badge--wide"
+    });
+// END : view_user_edit
+// START : view_user_list
+$('.input-search-user').keyup(function (e) {
+    $('.div_search').addClass('m-loader');
+    $('.div_search_hide').removeClass('m--hide');
+    let keyword = $(this).val();
+    $.ajax({
+        data: {
+            keyword: keyword,
+            action: "search"
+        },
+        type: 'post',
+        url: routeAjaxUser,
+        success: function (rsp) {
+            // console.log(rsp.data);
+            $('.div_search_hide').html('');
+            for (let i = 0;i<rsp.data.length;i++)
+            {
+                let email = rsp.data[i]['email'];
+                let replace_bold = email.replace(keyword,'<b>' + keyword + '</b>');
+                let element = `<span class="item-search" onclick="editUser(this)" data="${rsp.data[i]['id']}">${replace_bold}</span>`;
+                // let element = `<a href="/panel/user/edit/${rsp.data[i]['id']}" class="item-search" >${replace_bold}</a>`;
+                $('.div_search_hide').append(element);
+            }
+            $('.div_search').removeClass('m-loader');
+        },
+        error: function (e) {
+
+        }
+    })
+});
+// END : view_user_list

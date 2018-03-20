@@ -24,8 +24,14 @@ Route::middleware(['check_login','role_admin'])->group(function () {
 
         return view('admin.layouts.main');
     })->name('panel');
+    //START : USER
+        Route::get('/panel/user/view', 'admin\UserController@listUser')->name('panel.listUser');
+        Route::get('/panel/user/edit/{id}', 'admin\UserController@editUser')->name('panel.editUser');
+        Route::get('/panel/user/delete/{id}', 'admin\UserController@deleteUser')->name('panel.deleteUser');
+        Route::post('/panel/user/store', 'admin\UserController@storeUser')->name('panel.storeUser');
+        Route::post('/panel/user/ajax', 'admin\UserController@ajaxUser')->name('panel.ajaxUser');
 
-    Route::get('/panel/user/view', 'admin\UserController@listUser')->name('panel.listUser')->middleware('role_admin');
+    //END : USER
     //START : AUTHOR
         Route::get('/panel/author/view', 'admin\AuthorController@listAuthor')->name('panel.listAuthor');
         Route::get('/panel/author/create', 'admin\AuthorController@createAuthor')->name('panel.createAuthor');
