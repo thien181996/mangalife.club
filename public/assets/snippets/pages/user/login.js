@@ -73,10 +73,17 @@ var SnippetLogin = function() {
                 rules: {
                     email: {
                         required: true,
-                        email: true
                     },
                     password: {
                         required: true
+                    }
+                },
+                messages:{
+                    email: {
+                        required: "Vui lòng nhập tài khoản hoặc địa chỉ Email",
+                    },
+                    password: {
+                        required: "Vui lòng nhập mật khẩu"
                     }
                 }
             });
@@ -88,13 +95,27 @@ var SnippetLogin = function() {
             btn.addClass('m-loader m-loader--right m-loader--light').attr('disabled', true);
 
             form.ajaxSubmit({
-                url: '',
-                success: function(response, status, xhr, $form) {
-                	// similate 2s delay
-                	setTimeout(function() {
-	                    btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
-	                    showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
+                url: form.attr('action'),
+                success: function(rsp, status, xhr, $form) {
+                    if(rsp.status == true)
+                    {
+                        window.location = '/panel/dashboard';
+                    } else {
+                        // similate 2s delay
+                        setTimeout(function() {
+                            btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
+                            showErrorMsg(form, 'danger', rsp.msg);
+                        }, 2000);
+                    }
+
+                },
+                error: function (e) {
+                    console.log(e);
+                    setTimeout(function() {
+                        btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
+                        showErrorMsg(form, 'danger', 'Đã xảy ra lỗi');
                     }, 2000);
+
                 }
             });
         });

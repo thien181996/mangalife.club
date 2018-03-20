@@ -25,6 +25,10 @@ class SettingController extends Controller
         $setting = Setting::find($rq->setting_id);
         if($setting)
         {
+            $setting->client_id = $rq->client_id;
+            $setting->client_secret = $rq->client_secret;
+            $setting->client_token = $rq->client_token;
+            $setting->client_folder = $rq->client_folder;
             $setting->path_author = $rq->path_author;
             $setting->path_group = $rq->path_group;
             $setting->path_manga = $rq->path_manga;

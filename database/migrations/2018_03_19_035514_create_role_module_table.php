@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSettingTable extends Migration
+class CreateRoleModuleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateSettingTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('role_module', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('path_author',191)->nullable();
-            $table->string('path_group',191)->nullable();
-            $table->string('path_manga',191)->nullable();
+            $table->integer('module_id');
+            $table->integer('action_id');
+            $table->integer('role_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateSettingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('role_module');
     }
 }

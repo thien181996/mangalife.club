@@ -21,7 +21,59 @@
                     <div class="m-portlet__body">
                         <div class="form-group m-form__group row">
                             <label class="col-lg-2 col-form-label">
-                                Ảnh Tác giả
+                                GOOGLE CLIENT ID
+                            </label>
+                            <div class="col-lg-6">
+                                <input id="client_id" name="client_id" type="text" class="form-control m-input" placeholder="Nhập thông số client id google drive" value="{{ $settings->client_id }}">
+                                @if(count($errors) > 0)
+                                    <span class="m--font-danger">
+                                        {{$errors->first('client_id')}}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <label class="col-lg-2 col-form-label">
+                                GOOGLE CLIENT SECRET
+                            </label>
+                            <div class="col-lg-6">
+                                <input id="client_secret" name="client_secret" type="text" class="form-control m-input" placeholder="Nhập thông số client secret google drive" value="{{ $settings->client_secret }}">
+                                @if(count($errors) > 0)
+                                    <span class="m--font-danger">
+                                        {{$errors->first('client_secret')}}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <label class="col-lg-2 col-form-label">
+                                GOOGLE CLIENT TOKEN
+                            </label>
+                            <div class="col-lg-6">
+                                <input id="client_token" name="client_token" type="text" class="form-control m-input" placeholder="Nhập thông số client token google drive" value="{{ $settings->client_token }}">
+                                @if(count($errors) > 0)
+                                    <span class="m--font-danger">
+                                        {{$errors->first('client_token')}}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <label class="col-lg-2 col-form-label">
+                                GOOGLE ROOT FOLDER
+                            </label>
+                            <div class="col-lg-6">
+                                <input id="client_folder" name="client_folder" type="text" class="form-control m-input" placeholder="Nhập thông số root folder google drive" value="{{ $settings->client_folder }}">
+                                @if(count($errors) > 0)
+                                    <span class="m--font-danger">
+                                        {{$errors->first('client_folder')}}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group row">
+                            <label class="col-lg-2 col-form-label">
+                                Đường dẫn Ảnh Tác giả
                             </label>
                             <div class="col-lg-6">
                                 <input id="path_author" name="path_author" type="text" class="form-control m-input" placeholder="Nhập đường dẫn chứa ảnh tác giả" value="{{ $settings->path_author }}">
@@ -34,7 +86,7 @@
                         </div>
                         <div class="form-group m-form__group row">
                             <label class="col-lg-2 col-form-label">
-                                Ảnh Nhóm dịch
+                                Đường dẫn Ảnh Nhóm dịch
                             </label>
                             <div class="col-lg-6">
                                 <input id="path_group" name="path_group" type="text" class="form-control m-input" placeholder="Nhập đường dẫn chứa ảnh nhóm dịch" value="{{ $settings->path_group }}">
@@ -47,7 +99,7 @@
                         </div>
                         <div class="form-group m-form__group row">
                             <label class="col-lg-2 col-form-label">
-                                Ảnh Manga
+                                Đường dẫn Ảnh Manga
                             </label>
                             <div class="col-lg-6">
                                 <input id="path_manga" name="path_manga" type="text" class="form-control m-input" placeholder="Nhập đường dẫn chứa ảnh Manga" value="{{ $settings->path_manga }}">

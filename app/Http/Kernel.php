@@ -41,6 +41,22 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+
+        'check_login' => [
+            \App\Http\Middleware\admin\CheckLogin::class,
+        ],
+        'role_admin' => [
+            \App\Http\Middleware\Role\RoleAdmin::class,
+        ],
+        'role_mod' => [
+            \App\Http\Middleware\Role\RoleMod::class,
+        ],
+        'role_member' => [
+            \App\Http\Middleware\Role\RoleMember::class,
+        ],
+        'role_banned' => [
+            \App\Http\Middleware\Role\RoleBanned::class,
+        ],
     ];
 
     /**

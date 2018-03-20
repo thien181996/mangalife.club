@@ -20,6 +20,7 @@
     var routeAjaxManga = $('#routeAjaxManga').val();
     var routeAjaxChapter = $('#routeAjaxChapter').val();
     var routeAjaxStoreChapter = $('#routeAjaxStoreChapter').val();
+    var routeAjaxModuleAction = $('#routeAjaxModuleAction').val();
 // END : ROUTE
 // START : view_author_create, view_author_edit
     $('textarea#author_description').maxlength({
@@ -475,3 +476,51 @@ $('.notification_delete').each((i,v)=>{
     });
 });
 // END : view_notification_list
+// START : view_action_edit
+    $('#roles').select2();
+    $('#roles').on('select2:select', function (e) {
+        mApp.block('.div_set_role', {overlayColor: '#fff',opacity: 0.5});
+        let role_id = e.params.data.id;
+        let action_id = $('#action_id').val();
+        let module_id = $('#module_id').val();
+        $.ajax({
+            data: {
+                role_id: role_id,
+                action_id: action_id,
+                module_id: module_id,
+                action: 'create'
+            },
+            type: 'post',
+            url: routeAjaxModuleAction,
+            success: function (rsp) {
+                if(rsp.status)
+                {
+                    mApp.unblock('.div_set_role');
+                }
+            }
+        });
+    });
+    $('#roles').on('select2:unselect', function (e) {
+        mApp.block('.div_set_role', {overlayColor: '#fff',opacity: 0.5});
+        mApp.block('.div_set_role', {overlayColor: '#fff',opacity: 0.5});
+        let role_id = e.params.data.id;
+        let action_id = $('#action_id').val();
+        let module_id = $('#module_id').val();
+        $.ajax({
+            data: {
+                role_id: role_id,
+                action_id: action_id,
+                module_id: module_id,
+                action: 'delete'
+            },
+            type: 'post',
+            url: routeAjaxModuleAction,
+            success: function (rsp) {
+                if(rsp.status)
+                {
+                    mApp.unblock('.div_set_role');
+                }
+            }
+        });
+    });
+// END : view_action_edit

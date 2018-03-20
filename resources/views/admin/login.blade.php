@@ -36,6 +36,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!--begin::Base Styles -->
     <link href="{{ asset('assets/vendors/base/vendors.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/demo/default/base/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Base Styles -->
     <link rel="shortcut icon" href="{{ asset('assets/demo/default/media/img/logo/favicon.ico') }}" />
 </head>
@@ -51,39 +52,40 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="m-login__wrapper">
                         <div class="m-login__logo">
                             <a href="#">
-                                <img src="{{ asset('assets/app/media/img//logos/logo-2.png') }}">
+                                <img src="{{ asset('uploads/logo.png') }}" width="100%">
                             </a>
                         </div>
                         <div class="m-login__signin">
                             <div class="m-login__head">
                                 <h3 class="m-login__title">
-                                    Sign In To Admin
+                                    Đăng nhập vào Quản lý
                                 </h3>
                             </div>
-                            <form class="m-login__form m-form" action="">
+                            <form class="m-login__form m-form" action="{{ route('panel.loginUser') }}" method="post">
+                                @csrf
                                 <div class="form-group m-form__group">
-                                    <input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
+                                    <input class="form-control m-input" type="text" placeholder="Email hoặc tài khoản" name="email" autocomplete="off">
                                 </div>
                                 <div class="form-group m-form__group">
-                                    <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password">
+                                    <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Mật khẩu" name="password">
                                 </div>
                                 <div class="row m-login__form-sub">
                                     <div class="col m--align-left">
                                         <label class="m-checkbox m-checkbox--focus">
                                             <input type="checkbox" name="remember">
-                                            Remember me
+                                            Ghi nhớ đăng nhập
                                             <span></span>
                                         </label>
                                     </div>
                                     <div class="col m--align-right">
                                         <a href="javascript:;" id="m_login_forget_password" class="m-link">
-                                            Forget Password ?
+                                            Quên mật khẩu ?
                                         </a>
                                     </div>
                                 </div>
                                 <div class="m-login__form-action">
                                     <button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
-                                        Sign In
+                                        Đăng nhập
                                     </button>
                                 </div>
                             </form>
@@ -174,14 +176,13 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url(../../../assets/app/media/img//bg/bg-4.jpg)">
             <div class="m-grid__item m-grid__item--middle">
-                <h3 class="m-login__welcome">
-                    Join Our Community
+                <h3 class="m-login__welcome text-center">
+                    <div class="m-login__logo">
+                        <a href="#">
+                            <img src="{{ asset('uploads/logo.png') }}" width="60%">
+                        </a>
+                    </div>
                 </h3>
-                <p class="m-login__msg">
-                    Lorem ipsum dolor sit amet, coectetuer adipiscing
-                    <br>
-                    elit sed diam nonummy et nibh euismod
-                </p>
             </div>
         </div>
     </div>
@@ -194,13 +195,13 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--begin::Page Snippets -->
 <script src="{{ asset('assets/snippets/pages/user/login.js') }}" type="text/javascript"></script>
 <!--end::Page Snippets -->
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-</script>
+{{--<script type="text/javascript">--}}
+    {{--$.ajaxSetup({--}}
+        {{--headers: {--}}
+            {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+        {{--}--}}
+    {{--});--}}
+{{--</script>--}}
 </body>
 <!-- end::Body -->
 </html>

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Module;
+use App\ModuleAction;
+use App\RoleUser;
+use Illuminate\Support\Facades\Auth;
 use Storage;
 use File;
 
@@ -62,5 +66,31 @@ class lib
         return $result['basename']; // files
     }
 
+    public function moduleAccess()
+    {
+        $get_url_module = str_after(url()->current(),'/');
+        $slice_str = explode('/',$get_url_module);
+        $access = RoleUser::join('role_module','role_users.role_id','role_module.role_id')->where('user_id',Auth::id())->get();
+        $isModule = Module::where('module_name',$slice_str[2].'/'.$slice_str[3])->first();
+//        dd($isModule);
+        if($isModule)
+        {
+            $isAction = ModuleAction::where('action_name',$slice_str[4])->where('module_id',$isModule->id)->first();
+        }
+
+        foreach ($access as $permission)
+        {
+            if(empty($isModule)  && empty($isAction))
+            {
+                return false;
+            } else {
+                if(($isModule->id == $permission->module_id) && ($isAction->id == $permission->action_id))
+                {
+                    return true;
+                }
+
+            }
+        }
+    }
 
 }
