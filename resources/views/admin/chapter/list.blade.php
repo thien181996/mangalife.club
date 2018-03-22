@@ -44,24 +44,25 @@
                     <table class="table table-striped">
                         <thead>
                         <tr class="m--font-transform-u m--font-boldest">
+                            <th scope="col">Tên Manga</th>
                             <th scope="col">Tên Chương</th>
                             <th scope="col">Slug</th>
-                            <th scope="col">Hành động</th>
+                            <th scope="col" class="text-center">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($chapters as $chapter)
                             <tr>
+                                <td>{{ $chapter->getMangaName() }}</td>
                                 <td>{{ $chapter->chapter_name }}</td>
                                 <td>{{ $chapter->chapter_slug }}</td>
-                                <td>
+                                <td class="text-center">
                                     <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">
                                         <i class="la la-ellipsis-h"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
                                         <a class="dropdown-item" href="{{ route('panel.editChapter',['id'=>$chapter->id]) }}"><i class="la la-edit"></i> Chỉnh sửa</a>
-                                        <a class="dropdown-item chapter_delete" value="{{ route('panel.deleteChapter',['id'=>$chapter->id]) }}" chapter_name="{{ $chapter->chapter_name }}"><i class="la la-trash"></i> Xóa</a>
-                                        <a class="dropdown-item" href="#"><i class="la la-cog"></i> Something else</a>
+                                        <a class="dropdown-item chapter_delete" href="#modal_chapter_delete" value="{{ route('panel.deleteChapter',['id'=>$chapter->id]) }}" chapter_name="{{ $chapter->chapter_name }}"><i class="la la-trash"></i> Xóa</a>
                                     </div>
                                 </td>
                             </tr>

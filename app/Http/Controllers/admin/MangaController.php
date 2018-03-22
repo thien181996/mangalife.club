@@ -25,10 +25,18 @@ class MangaController extends Controller
         $this->lib = $lib;
     }
     //list all manga
-    public function listManga()
+    public function listManga(Request $rq)
     {
-        $mangas = Manga::paginate(10);
-
+        if($rq->author_id)
+        {
+            $mangas = AuthorManga::join('mangas','author_mangas.manga_id','mangas.id')->select('mangas.*')->where('author_id',$rq->author_id)->paginate(10);
+        } elseif($rq->group_id) {
+            $mangas = TranslateGroupManga::join('mangas','translate_group_mangas.manga_id','mangas.id')->select('mangas.*')->where('group_id',$rq->group_id)->paginate(10);
+        } elseif($rq->category_id) {
+            $mangas = CategoryManga::join('mangas','category_mangas.manga_id','mangas.id')->select('mangas.*')->where('category_id',$rq->category_id)->paginate(10);
+        } else {
+            $mangas = Manga::paginate(10);
+        }
         return view('admin.manga.list',compact('mangas'));
     }
     //create manga
@@ -44,17 +52,13 @@ class MangaController extends Controller
         if($isObj)
         {
 
-             $manga = Manga::find($isObj);
+            $manga = Manga::find($isObj);
+            $baseName = $manga->manga_path;
         } else {
             $manga = new Manga();
             $this->lib->createFolderGoogleDrive($path_manga,$rq->manga_slug);
             $baseName = $this->lib->getBaseNameFolderGoogleDrive($path_manga,$rq->manga_slug);
-        }
-        if($baseName)
-        {
             $manga->manga_path = $baseName;
-        } else {
-            $baseName = $manga->manga_path;
         }
         //upload image
         if($rq->hasFile('manga_cover'))

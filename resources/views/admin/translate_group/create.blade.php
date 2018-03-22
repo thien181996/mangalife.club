@@ -28,7 +28,7 @@
                                     <label for="view_create_input_group_cover">
                                         <img style="max-height: 360px" id="view_create_img_group_cover" src="{{ asset('uploads/default_image/group.jpg') }}" width="100%" alt="Group Cover">
                                     </label>
-                                    <input id="view_create_input_group_cover" name="group_cover" type="file" class="form-control m-input m--hide" accept="">
+                                    <input id="view_create_input_group_cover" name="group_cover" type="file" class="form-control m-input m--hide" accept="image/*">
                                 </div>
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
@@ -53,7 +53,7 @@
                         <div class="form-group m-form__group row">
                             <div class="col-lg-12">
                                 <label>
-                                    Tên nhóm dịch *
+                                    Tên nhóm dịch <span class="m--font-danger">*</span>
                                 </label>
                                 <input id="group_name" name="group_name" type="text" class="form-control m-input" placeholder="Nhập tên nhóm dịch" value="{{ old('group_name') }}">
                                 @if(count($errors) > 0)
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <label class="">
-                                    Đường dẫn *
+                                    Đường dẫn <span class="m--font-danger">*</span>
                                 </label>
                                 <input id="group_slug" name="group_slug" type="text" class="form-control m-input" placeholder="Nhập đường dẫn" value="{{ old('group_description') }}" >
                                 @if(count($errors) > 0)
@@ -93,7 +93,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <label class="">
-                                    Tài khoản nhóm dịch *
+                                    Tài khoản nhóm dịch <span class="m--font-danger">*</span>
                                 </label>
                                 <select class="form-control m-input" name="user_id" id="group_select_user">
                                     @foreach($users as $user)
@@ -102,7 +102,7 @@
                                 </select>
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
-                                        {{$errors->first('group_url')}}
+                                        {{$errors->first('user_id')}}
                                     </span>
                                 @endif
                             </div>
@@ -116,14 +116,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         Thêm mới
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listTranslateGroup') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
-                                </div>
-                                <div class="col-lg-6 m--align-right">
-                                    <button type="reset" class="btn btn-danger">
-                                        Xóa
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+Route::get('author/all/v1', function () {
+   return \App\Author::all();
+});
+Route::post('author/store/v1', function (Request $rq) {
+    $author = \App\Author::create($rq->all());
+   return response()->json($author, 201);
+});

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\ChapterManga;
+use App\Http\Requests\admin\ChapterMangaRequest;
 use App\Manga;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -44,9 +45,32 @@ class ChapterController extends Controller
         return view('admin.chapter.edit',compact('mangas','chapter','chapter_mangas'));
     }
     //action ajax insert data to database
-    public function ajaxStoreChapter(Request $rq)
+    public function ajaxStoreChapter(Request $rq, ChapterMangaRequest $request)
     {
 //        dd($rq->all());
+        $action = $rq->action;
+        switch ($action)
+        {
+            case "delete_image":
+                $chapter = ChapterManga::where('chapter_image_name',$rq->chapter_manga)->first();
+                $chapter->delete();
+                break;
+            case "sort_chapter":
+                foreach ($rq->name_arr as $key => $name)
+                {
+                    $chapter_manga = ChapterManga::where('chapter_image_name',$name)->first();
+                    $chapter_manga->chapter_sort = $key;
+                    $chapter_manga->save();
+                }
+                break;
+            default:
+                return response(['error'=>"nothing"]);
+        }
+
+    }
+    //ajax upload img
+    public function ajaxUploadChapter(ChapterMangaRequest $rq)
+    {
         $action = $rq->action;
         switch ($action)
         {
@@ -78,18 +102,6 @@ class ChapterController extends Controller
                     return response(['chapter_serial'=>$file->getClientSize(),'chapter_manga'=>$chapter_manga->chapter_image_name]);
                 }
 
-                break;
-            case "delete_image":
-                $chapter = ChapterManga::where('chapter_image_name',$rq->chapter_manga)->first();
-                $chapter->delete();
-                break;
-            case "sort_chapter":
-                foreach ($rq->name_arr as $key => $name)
-                {
-                    $chapter_manga = ChapterManga::where('chapter_image_name',$name)->first();
-                    $chapter_manga->chapter_sort = $key;
-                    $chapter_manga->save();
-                }
                 break;
             default:
                 return response(['error'=>"nothing"]);
@@ -156,5 +168,7 @@ class ChapterController extends Controller
                 $chapter_manga->delete();
             }
         }
+
+        return redirect(route('panel.listChapter'));
     }
 }

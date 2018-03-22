@@ -39,7 +39,7 @@
                             <div class="col-lg-4" >
                                 <div class="m-loader--primary m-loader--right div_search" style="position: relative;" >
                                     <input type="text" class="form-control m--input input-search-user" style="padding: 0.65rem 10px;" placeholder="Nhập email cần tìm kiếm" onblur="enableHide()">
-                                    <div class="m--hide div_search_hide" style="width: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: absolute;background: #ffffff;padding:5px 0 5px 0">
+                                    <div class="m--hide div_search_hide">
 
                                     </div>
                                 </div>
@@ -49,14 +49,14 @@
                         </div>
                     </div>
                     <div class="col-lg-4 m--align-right">
-                        <a href="{{ route('panel.updateRoutersModule') }}" class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
-                            <span>
-                                <i class="la la-refresh"></i>
-                                <span>
-                                    Cập nhật Module
-                                </span>
-                            </span>
-                        </a>
+                        {{--<a href="{{ route('panel.updateRoutersModule') }}" class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">--}}
+                            {{--<span>--}}
+                                {{--<i class="la la-refresh"></i>--}}
+                                {{--<span>--}}
+                                    {{--Cập nhật Module--}}
+                                {{--</span>--}}
+                            {{--</span>--}}
+                        {{--</a>--}}
                     </div>
                 </div>
                 <table class="table table-striped">

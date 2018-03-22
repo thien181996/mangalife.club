@@ -46,7 +46,7 @@
                         <tr class="m--font-transform-u m--font-boldest">
                             <th scope="col">Tên thể loại</th>
                             <th scope="col">Slug</th>
-                            <th scope="col">Hành động</th>
+                            <th scope="col" class="text-center">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -54,14 +54,14 @@
                             <tr>
                                 <td>{{ $category->category_name }}</td>
                                 <td>{{ $category->category_slug}}</td>
-                                <td>
+                                <td class="text-center">
                                     <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" id="dropdownMenuButton">
                                         <i class="la la-ellipsis-h"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
                                         <a class="dropdown-item" href="{{ route('panel.editCategory',['id'=>$category->id]) }}"><i class="la la-edit"></i> Chỉnh sửa</a>
-                                        <a class="dropdown-item category_delete" value="{{ route('panel.deleteCategory',['id'=>$category->id]) }}" category_name="{{ $category->category_name }}"><i class="la la-trash"></i> Xóa</a>
-                                        <a class="dropdown-item" href="#"><i class="la la-cog"></i> Something else</a>
+                                        <a class="dropdown-item category_delete" href="#modal_category_delete" value="{{ route('panel.deleteCategory',['id'=>$category->id]) }}" category_name="{{ $category->category_name }}"><i class="la la-trash"></i> Xóa</a>
+                                        <a class="dropdown-item" href="{{ route('panel.listManga') }}?category_id={{ $category->id }}"><i class="la la-cog"></i> Danh sách truyện</a>
                                     </div>
                                 </td>
                             </tr>

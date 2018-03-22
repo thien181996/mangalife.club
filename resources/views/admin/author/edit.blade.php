@@ -28,7 +28,7 @@
                                     <label for="view_create_input_author_cover">
                                         <img style="max-height: 360px" id="view_create_img_author_cover" src="{{ asset('panel/author/stream/1gj4NccLPmvWxSTK5n2YQNXmiCXjQxx53/' . $author->author_cover) }}" width="100%" alt="{{ $author->author_name }}">
                                     </label>
-                                    <input id="view_create_input_author_cover" name="author_cover" type="file" class="form-control m-input m--hide" accept="">
+                                    <input id="view_create_input_author_cover" name="author_cover" type="file" class="form-control m-input m--hide" accept="image/*">
                                 </div>
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
@@ -53,7 +53,7 @@
                         <div class="form-group m-form__group row">
                             <div class="col-lg-12">
                                 <label>
-                                    Tên tác giả *
+                                    Tên tác giả <span class="m--font-danger">*</span>
                                 </label>
                                 <input id="author_name" name="author_name" type="text" class="form-control m-input" placeholder="Nhập tên tác giả" value="{{ $author->author_name }}">
                                 @if(count($errors) > 0)
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <label class="">
-                                    Đường dẫn *
+                                    Đường dẫn <span class="m--font-danger">*</span>
                                 </label>
                                 <input id="author_slug" name="author_slug" type="text" class="form-control m-input" placeholder="Nhập đường dẫn" value="{{ $author->author_slug }}" >
                                 @if(count($errors) > 0)
@@ -101,9 +101,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         Lưu chỉnh sửa
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listAuthor') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col-lg-6 m--align-right">
                                     <a href="{{ route('panel.deleteAuthor',['id'=>$author->id]) }}" class="btn btn-danger">

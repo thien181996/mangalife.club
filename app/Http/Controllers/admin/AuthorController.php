@@ -22,7 +22,7 @@ class AuthorController extends Controller
 
     public function listAuthor()
     {
-        $authors = Author::paginate(10);
+        $authors = Author::orderBy('created_at','desc')->paginate(10);
 
         return view('admin.author.list',compact('authors'));
     }
@@ -106,5 +106,18 @@ class AuthorController extends Controller
         }
 
         return redirect(route('panel.listAuthor'));
+    }
+    //action ajax
+    public function ajaxAuthor(Request $rq)
+    {
+        $action = $rq->action;
+        switch ($action)
+        {
+            case "search":
+                $authors = Author::where('author_name','like','%'.$rq->keyword.'%')->limit(5)->get();
+                return response(['data'=>$authors]);
+                break;
+            default:
+        }
     }
 }

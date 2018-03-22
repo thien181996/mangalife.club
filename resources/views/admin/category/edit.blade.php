@@ -54,12 +54,12 @@
                                     <button type="submit" class="btn btn-primary">
                                         Lưu chỉnh sửa
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listCategory') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col-lg-4 m--align-right">
-                                    <a href="#" class="btn btn-danger">
+                                    <a href="{{ route('panel.deleteCategory',['id'=>$category->id]) }}" class="btn btn-danger">
                                         Xóa
                                     </a>
                                 </div>

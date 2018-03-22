@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('title','Chỉnh sửa Chương')
 @section('content')
-    <div class="row" onload="view_edit_load_img()">
+    <div class="row">
         <div class="col-lg-12">
             <div class="m-portlet">
                 <div class="m-portlet__head">
@@ -67,7 +67,7 @@
                                         </span>
                                         </span>
                                     </label>
-                                    <input id="view_create_input_chapter" name="manga_cover" type="file" class="form-control m-input m--hide" accept="" multiple>
+                                    <input id="view_create_input_chapter" name="manga_cover" type="file" class="form-control m-input m--hide" accept="image/*" multiple>
                                 </div>
                                 <button type="button" id="button_sort_chapter" class="btn btn-success m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill m--hide">Lưu vị trí</button>
                             </label>
@@ -75,13 +75,14 @@
                                 <div class="row" id="div_chapter" >
                                     @foreach($chapter_mangas as $chapter_manga)
                                     <div class="col-2 text-center div_chapter_img" data="{{ $chapter_manga->chapter_image_name }}" >
-                                        <img onload="loadImg()" id="div_chapter_img_{{ $chapter_manga->id }}" class="m--margin-top-5 m--margin-bottom-5" src="" width="100%" height="119" alt="{{ $chapter_manga->chapter_image_name }}">
+                                        <img id="div_chapter_img_{{ $chapter_manga->id }}" class="m--margin-top-5 m--margin-bottom-5 lazyload" src="/panel/chapter/stream/{{ $chapter_manga->chapter_image_url.'/'.$chapter_manga->chapter_image_name }}" width="100%" height="119" alt="{{ $chapter_manga->chapter_image_name }}">
                                         <button onclick="removeImage(this)" data="0" type="button" class="btn-custom">
                                             <i class="fa fa-remove"></i>
                                         </button>
                                     </div>
                                     @endforeach
                                 </div>
+                                <span class="m--font-danger chapter_img"></span>
                             </div>
 
                         </div>
@@ -123,9 +124,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         Lưu lại
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listChapter') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col-lg-4 m--align-right">
                                     <a href="{{ route('panel.deleteChapter',['id'=>$chapter->id]) }}" class="btn btn-danger">
@@ -147,4 +148,28 @@
     <input type="hidden" id="routeGetSlugChapter" value="{{ route('panel.getSlugChapter') }}">
     <input type="hidden" id="routeAjaxChapter" value="{{ route('panel.ajaxChapter') }}">
     <input type="hidden" id="routeAjaxStoreChapter" value="{{ route('panel.ajaxStoreChapter') }}">
+    <input type="hidden" id="routeAjaxUploadChapter" value="{{ route('panel.ajaxUploadChapter') }}">
+@endsection
+@section('js')
+    <script>
+        // function view_load_img()
+        // {
+        //     var img_arr = $('#chapter_img_arr').val();
+        //     var jsonData = JSON.parse(img_arr);
+        //     for(let i = 0 ; i < jsonData.length ; i++)
+        //     {
+        //         console.log(i);
+        //         var src = '/panel/chapter/stream/'+jsonData[i]['chapter_image_url']+'/'+jsonData[i]['chapter_image_name'];
+        //         console.log('src:' + src);
+        //         $('#div_chapter_img_'+jsonData[i]['id']).attr('src',src);
+        //         setInterval(function () {
+        //
+        //         },1000);
+        //     }
+        // }
+        // view_load_img();
+        console.log(lazyload());
+        // lazyload();
+
+    </script>
 @endsection

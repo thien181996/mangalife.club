@@ -3,6 +3,7 @@
 namespace App\Http\Requests\admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class TranslateGroupRequest extends FormRequest
 {
@@ -26,7 +27,12 @@ class TranslateGroupRequest extends FormRequest
         return [
             'group_description' => 'max:500',
             'group_name' => 'required',
-            'group_slug' => 'required'
+            'user_id' => 'required',
+            'group_slug' => 'required',
+            'group_cover' => [
+                Rule::dimensions()->maxWidth(360)->maxHeight(360)->minWidth(360)->minHeight(360),
+                'mimes:jpeg,jpg,png'
+            ]
         ];
     }
 
@@ -35,7 +41,10 @@ class TranslateGroupRequest extends FormRequest
         return [
             'group_description.max' => "Độ dài đã quá số lượng quy định",
             'group_name.required' => "Nội dung này không được để trống",
-            'group_slug.required' => "Nội dung này không được để trống"
+            'user_id.required' => "Nội dung này không được để trống",
+            'group_slug.required' => "Nội dung này không được để trống",
+            'group_cover.dimensions' => "Kính thước ảnh cho phép là 360x360",
+            'group_cover.mimes' => "Chỉ cho phép định dạng jpeg,jpg,png",
         ];
     }
 }

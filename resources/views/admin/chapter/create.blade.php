@@ -108,9 +108,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         Thêm mới
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listChapter') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

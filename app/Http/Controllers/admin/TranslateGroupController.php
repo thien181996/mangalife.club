@@ -110,4 +110,17 @@ class TranslateGroupController extends Controller
     {
         return $this->lib->getStreamGoogleDrive($fileDir,$fileName);
     }
+    //action ajax
+    public function ajaxTranslateGroup(Request $rq)
+    {
+        $action = $rq->action;
+        switch ($action)
+        {
+            case "search":
+                $group = TranslateGroup::where('group_name','like','%'.$rq->keyword.'%')->limit(5)->get();
+                return response(['data'=>$group]);
+                break;
+            default:
+        }
+    }
 }

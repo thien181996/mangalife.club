@@ -54,13 +54,8 @@
                                     <button type="submit" class="btn btn-primary">
                                         Thêm mới
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listCategory') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
-                                </div>
-                                <div class="col-lg-4 m--align-right">
-                                    <a href="#" class="btn btn-danger">
-                                        Xóa
                                     </a>
                                 </div>
                             </div>

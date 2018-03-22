@@ -26,9 +26,9 @@
                                 </label>
                                 <div class="view_create_div_author_cover">
                                     <label for="view_create_input_author_cover">
-                                        <img style="max-height: 360px" id="view_create_img_author_cover" src="{{ asset('uploads/default_image/author.jpg') }}" width="100%" alt="Author Cover">
+                                        <img style="max-height: 360px" id="view_create_img_author_cover" src="{{ asset('uploads/default_image/default-image.jpg') }}" width="100%" alt="Author Cover">
                                     </label>
-                                    <input id="view_create_input_author_cover" name="author_cover" type="file" class="form-control m-input m--hide" accept="">
+                                    <input id="view_create_input_author_cover" name="author_cover" type="file" class="form-control m-input m--hide" accept="image/*">
                                 </div>
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
@@ -53,7 +53,7 @@
                         <div class="form-group m-form__group row">
                             <div class="col-lg-12">
                                 <label>
-                                    Tên tác giả *
+                                    Tên tác giả <span class="m--font-danger">*</span>
                                 </label>
                                 <input id="author_name" name="author_name" type="text" class="form-control m-input" placeholder="Nhập tên tác giả" value="{{ old('author_name') }}">
                                 @if(count($errors) > 0)
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <label class="">
-                                    Đường dẫn *
+                                    Đường dẫn <span class="m--font-danger">*</span>
                                 </label>
                                 <input id="author_slug" name="author_slug" type="text" class="form-control m-input" placeholder="Nhập đường dẫn" value="{{ old('author_slug') }}" >
                                 @if(count($errors) > 0)
@@ -101,14 +101,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         Thêm mới
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listAuthor') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
-                                </div>
-                                <div class="col-lg-6 m--align-right">
-                                    <button type="reset" class="btn btn-danger">
-                                        Xóa
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

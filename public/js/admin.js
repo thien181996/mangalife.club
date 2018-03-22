@@ -33,7 +33,7 @@
 
     }
     function editUser(e) {
-        location.href = "/panel/user/edit/" + $(e).attr('data');
+        location.href = $(e).attr('data');
     }
 // END : FUNCTION
 // START : ROUTE
@@ -47,6 +47,9 @@
     var routeAjaxStoreChapter = $('#routeAjaxStoreChapter').val();
     var routeAjaxModuleAction = $('#routeAjaxModuleAction').val();
     var routeAjaxUser = $('#routeAjaxUser').val();
+    var routeAjaxAuthor = $('#routeAjaxAuthor').val();
+    var routeAjaxTranslateGroup = $('#routeAjaxTranslateGroup').val();
+    var routeAjaxUploadChapter = $('#routeAjaxUploadChapter').val();
 // END : ROUTE
 // START : view_author_create, view_author_edit
     $('textarea#author_description').maxlength({
@@ -86,6 +89,37 @@
         });
 
     });
+    $('.input-search-author').keyup(function (e) {
+        $('.div_search').addClass('m-loader');
+        $('.div_search_hide').removeClass('m--hide');
+        let keyword = $(this).val();
+        $.ajax({
+            data: {
+                keyword: keyword,
+                action: "search"
+            },
+            type: 'post',
+            url: routeAjaxAuthor,
+            success: function (rsp) {
+                // console.log(rsp.data);
+                $('.div_search_hide').html('');
+                for (let i = 0;i<rsp.data.length;i++)
+                {
+                    let email = rsp.data[i]['author_name'];
+                    let replace_bold = email.replace(keyword,'<b>' + keyword + '</b>');
+                    let element = `<span class="item-search" onclick="editUser(this)" data="/panel/author/edit/${rsp.data[i]['id']}">${replace_bold}</span>`;
+                    // let element = `<a href="/panel/user/edit/${rsp.data[i]['id']}" class="item-search" >${replace_bold}</a>`;
+                    $('.div_search_hide').append(element);
+                }
+                $('.div_search').removeClass('m-loader');
+            },
+            error: function (e) {
+                $('.div_search_hide').html('');
+                $('.div_search').removeClass('m-loader');
+                $('.div_search_hide').addClass('m--hide');
+            }
+        })
+    });
 // END : view_author_list
 // START : view_translate_group_create, view_translate_group_edit
     $('textarea#group_description').maxlength({
@@ -117,13 +151,44 @@
     $('#group_select_user').select2();
 // END : view_translate_group_create, view_translate_group_edit
 // START : view_translate_group_list
-$('.group_delete').each((i,v)=>{
-    $(v).click(()=>{
-        $('#modal_translate_group_delete').modal('show');
-        $('#modal_translate_group_delete_content').html('Bạn có chắc chắn muốn xóa nhóm dịch <strong>'+ $(v).attr('group_name')+'</strong> không?');
-        $('#modal_translate_group_delete_button').attr('href',$(v).attr('value'));
+    $('.group_delete').each((i,v)=>{
+        $(v).click(()=>{
+            $('#modal_translate_group_delete').modal('show');
+            $('#modal_translate_group_delete_content').html('Bạn có chắc chắn muốn xóa nhóm dịch <strong>'+ $(v).attr('group_name')+'</strong> không?');
+            $('#modal_translate_group_delete_button').attr('href',$(v).attr('value'));
+        });
     });
-});
+    $('.input-search-group').keyup(function (e) {
+        $('.div_search').addClass('m-loader');
+        $('.div_search_hide').removeClass('m--hide');
+        let keyword = $(this).val();
+        $.ajax({
+            data: {
+                keyword: keyword,
+                action: "search"
+            },
+            type: 'post',
+            url: routeAjaxTranslateGroup,
+            success: function (rsp) {
+                // console.log(rsp.data);
+                $('.div_search_hide').html('');
+                for (let i = 0;i<rsp.data.length;i++)
+                {
+                    let email = rsp.data[i]['group_name'];
+                    let replace_bold = email.replace(keyword,'<b>' + keyword + '</b>');
+                    let element = `<span class="item-search" onclick="editUser(this)" data="/panel/translate_group/edit/${rsp.data[i]['id']}">${replace_bold}</span>`;
+                    // let element = `<a href="/panel/user/edit/${rsp.data[i]['id']}" class="item-search" >${replace_bold}</a>`;
+                    $('.div_search_hide').append(element);
+                }
+                $('.div_search').removeClass('m-loader');
+            },
+            error: function (e) {
+                $('.div_search_hide').html('');
+                $('.div_search').removeClass('m-loader');
+                $('.div_search_hide').addClass('m--hide');
+            }
+        })
+    });
 // END : view_translate_group_list
 // START : view_category_create, view_category_edit
     $('#category_name').change(function(e){
@@ -388,7 +453,7 @@ $('.manga_delete').each((i,v)=>{
             $.ajax({
                 data: fB,
                 type: 'post',
-                url: routeAjaxStoreChapter,
+                url: routeAjaxUploadChapter,
                 processData: false,
                 contentType: false,
                 success: function (rsp) {
@@ -398,6 +463,10 @@ $('.manga_delete').each((i,v)=>{
                 },
                 error: function (e) {
                     $('.chapter_' + size).remove();
+                    if(e.responseJSON.errors.chapter_img[0] != undefined)
+                    {
+                        $('.chapter_img').html(e.responseJSON.errors.chapter_img[0]);
+                    }
                 }
             });
         }
@@ -440,21 +509,6 @@ $('.manga_delete').each((i,v)=>{
             }
         });
     });
-
-    function view_edit_load_img() {
-        var img_arr = $('#chapter_img_arr').val();
-        var jsonData = JSON.parse(img_arr);
-        console.log(jsonData.length);
-        for(let i = 0 ; i < jsonData.length ; i++)
-        {
-            var src = '/panel/chapter/stream/'+jsonData[i]['chapter_image_url']+'/'+jsonData[i]['chapter_image_name'];
-            $('#div_chapter_img_'+jsonData[i]['id']).attr('src',src);
-            function loadImg()
-            {
-
-            }
-        }
-    }
 
 
 // END : view_manga_create, view_manga_edit
@@ -576,14 +630,16 @@ $('.input-search-user').keyup(function (e) {
             {
                 let email = rsp.data[i]['email'];
                 let replace_bold = email.replace(keyword,'<b>' + keyword + '</b>');
-                let element = `<span class="item-search" onclick="editUser(this)" data="${rsp.data[i]['id']}">${replace_bold}</span>`;
+                let element = `<span class="item-search" onclick="editUser(this)" data="/panel/user/edit/${rsp.data[i]['id']}">${replace_bold}</span>`;
                 // let element = `<a href="/panel/user/edit/${rsp.data[i]['id']}" class="item-search" >${replace_bold}</a>`;
                 $('.div_search_hide').append(element);
             }
             $('.div_search').removeClass('m-loader');
         },
         error: function (e) {
-
+            $('.div_search_hide').html('');
+            $('.div_search').removeClass('m-loader');
+            $('.div_search_hide').addClass('m--hide');
         }
     })
 });

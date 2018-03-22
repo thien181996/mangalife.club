@@ -38,6 +38,7 @@ Route::middleware(['check_login','role_admin'])->group(function () {
         Route::get('/panel/author/edit/{id}', 'admin\AuthorController@editAuthor')->name('panel.editAuthor');
         Route::get('/panel/author/delete/{id}', 'admin\AuthorController@deleteAuthor')->name('panel.deleteAuthor');
         Route::post('/panel/author/store', 'admin\AuthorController@storeAuthor')->name('panel.storeAuthor');
+        Route::post('/panel/author/ajax', 'admin\AuthorController@ajaxAuthor')->name('panel.ajaxAuthor');
         Route::post('/panel/author/getSlug', 'admin\AuthorController@getSlugAuthor')->name('panel.getSlugAuthor');
         Route::get('/panel/author/stream/{fileDir}/{fileName}', 'admin\AuthorController@streamAuthor')->name('panel.streamAuthor');
     //END : AUTHOR
@@ -47,6 +48,7 @@ Route::middleware(['check_login','role_admin'])->group(function () {
         Route::get('/panel/translate_group/edit/{id}', 'admin\TranslateGroupController@editTranslateGroup')->name('panel.editTranslateGroup');
         Route::get('/panel/translate_group/delete/{id}', 'admin\TranslateGroupController@deleteTranslateGroup')->name('panel.deleteTranslateGroup');
         Route::post('/panel/translate_group/store', 'admin\TranslateGroupController@storeTranslateGroup')->name('panel.storeTranslateGroup');
+        Route::post('/panel/translate_group/ajax', 'admin\TranslateGroupController@ajaxTranslateGroup')->name('panel.ajaxTranslateGroup');
         Route::post('/panel/translate_group/getSlug', 'admin\TranslateGroupController@getSlugTranslateGroup')->name('panel.getSlugTranslateGroup');
         Route::get('/panel/translate_group/stream/{fileDir}/{fileName}', 'admin\TranslateGroupController@streamTranslateGroup')->name('panel.streamTranslateGroup');
     //END : TRANSLATE GROUP
@@ -77,6 +79,7 @@ Route::middleware(['check_login','role_admin'])->group(function () {
         Route::post('/panel/chapter/getSlug', 'admin\ChapterController@getSlugChapter')->name('panel.getSlugChapter');
         Route::post('/panel/chapter/ajax', 'admin\ChapterController@ajaxChapter')->name('panel.ajaxChapter');
         Route::post('/panel/chapter/ajaxStore', 'admin\ChapterController@ajaxStoreChapter')->name('panel.ajaxStoreChapter');
+        Route::post('/panel/chapter/ajaxUpload', 'admin\ChapterController@ajaxUploadChapter')->name('panel.ajaxUploadChapter');
         Route::get('/panel/chapter/stream/{fileDir}/{fileName}', 'admin\ChapterController@streamChapter')->name('panel.streamChapter');
     //END : CHAPTER
     //START : COMMENT
@@ -114,6 +117,8 @@ Route::middleware(['check_login','role_admin'])->group(function () {
         Route::get('/panel/module/delete', 'admin\ModuleController@deleteModule')->name('panel.deleteModule');
         Route::get('/panel/module/updateRoutes', function () {
             $routes = Route::getRoutes();
+            $count = 0;
+            $count_routes = count($routes);
             foreach ($routes as $route)
             {
                 $slice_str = explode('/',$route->uri);
@@ -135,6 +140,8 @@ Route::middleware(['check_login','role_admin'])->group(function () {
                         $role_module->action_id = $module_action->id;
                         $role_module->role_id = 1;
                         $role_module->save();
+                    } else {
+                        $count++;
                     }
                 } else {
                     $module_new = new \App\Module();
@@ -153,7 +160,13 @@ Route::middleware(['check_login','role_admin'])->group(function () {
                     $role_module->save();
                 }
             }
-            return redirect()->route('panel.listModule')->with('msg', 'Cập nhật module hoàn tất!');
+            if($count == $count_routes)
+            {
+                $msg = "Không có module mới được cập nhật";
+            } else {
+                $msg = "Đã cập nhật " . ($count_routes - $count) . " action mới!";
+            }
+            return redirect()->route('panel.listModule')->with('msg', $msg);
         })->name('panel.updateRoutersModule');
     //END : MODULE
     //START : ACTION

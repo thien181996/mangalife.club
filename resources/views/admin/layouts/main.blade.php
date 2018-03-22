@@ -118,6 +118,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--end::Page Snippets -->
 <!--begin::JS GLOBAL -->
 <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/lazyload.js') }}" type="text/javascript"></script>
 <!--end::JS GLOBAL -->
 <script type="text/javascript">
     $.ajaxSetup({
@@ -126,6 +127,7 @@ License: You must have a valid license purchased only from themeforest(the above
         }
     });
 </script>
+@yield('js')
 </body>
 <!-- end::Body -->
 </html>
