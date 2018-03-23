@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/trang-chu/doc-truyen/truyen-moi-cap-nhat', function () {
+Route::get('/', function () {
+    return view('index');
+});Route::get('/trang-chu/doc-truyen/truyen-moi-cap-nhat', function () {
     return view('index');
 });
 Route::get('/panel/authen/login','admin\LoginController@formLogin')->name('panel.loginForm');
