@@ -6,6 +6,7 @@
     {{--end swiper here--}}
 @endsection
 @section('content')
+
     <div class="section-slider">
         <div class="container">
 

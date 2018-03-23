@@ -41,8 +41,8 @@
 <body>
 <header id="header">
     <div class="section-navigation">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-theme">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-xl navbar-dark bg-dark bg-theme">
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('pages/images/logo.png') }}" width="200">
                 </a>
@@ -55,15 +55,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <li class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        {{--<li class="nav-item active">--}}
-                        {{--<a class="nav-link" href="#">Đăng nhập / Đăng ký <span class="sr-only">(current)</span></a>--}}
-                        {{--</li>--}}
-
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Đăng nhập</a>
-                        </li>
 
 
                         <li class="dropdown menu-large nav-item"><a href="#" class="dropdown-toggle nav-link"
@@ -217,28 +210,54 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nhóm dịch</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">List truyện</a>
-                        </li>
+
+
                         {{--<li class="nav-item">--}}
                         {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
                         {{--</li>--}}
-
-                        <form class="form-inline manga-search-merge pull-left">
+                        <form class="form-inline manga-search-merge float-left">
                             <span class="fa fa-search manga-search-submit"></span>
                             <input class="form-control mr-sm-2 manga-search" type="search"
-                                   aria-label="Search">
+                                   aria-label="Search" placeholder="Tìm truyện ...">
+
                         </form>
-                        <li class="social">
-                            <i class="flaticon-alert-1"></i>
-                            <i class="flaticon-user"></i>
+
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#login"><span
+                                        class="fa fa-user"></span> Đăng nhập</a>
+                        </li>
+                        <li class="social nav-item">
+                            <a class="nav-link" href="#"><span
+                                        class="fa fa-bookmark alert-new"></span> Truyện theo dõi</a>
+                        </li>
+                        <li class="social nav-item">
+                            <a class="nav-link" href="#"><span
+                                        class="fa fa-envelope alert-new"></span> Hòm thư</a>
+                        </li>
+                        <li class="social nav-item">
+                            <a class="nav-link" href="#"><span
+                                        class="fa fa-cloud-upload "></span> Upload truyện</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-user"></span> Sun Lord
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                                <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Đăng xuất</a>
+                            </div>
+                        </li>
+                        <li class="social nav-item">
+                            <a class="nav-link" href="#"><span
+                                        class="fa fa-phone"></span> Liên hệ - Góp ý</a>
                         </li>
                     </ul>
 
-                </div>
             </nav>
         </div>
 

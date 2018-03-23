@@ -10,20 +10,46 @@
             padding-top: 10px;
             padding-bottom: 10px;
         }
+
+        .translate-content {
+            padding-top: 5px;
+        }
     </style>
 @endsection
 @section('content')
     <div class="section-manga-author-detail">
         <div class="container">
-            <h2 class="heading-title">Truyện thuộc nhóm dịch <a href="#">#<span class="manga-type">Toku</span></a>
-            </h2>
+
 
             <div class="row">
                 <div class="col-md-3">
                     <img src="{{asset('pages/images/re-life.jpg')}}" alt="" class="item-img-width">
                 </div>
                 <div class="col-md-9">
-
+                    <h3>Nhóm dịch <a href="#">#<span class="manga-type">Toku</span></a>
+                    </h3>
+                    <div class="translate-content">
+                        <p><b>Giới thiệu : </b><br>
+                            <small>Lorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem
+                                ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem
+                                ipsuLorem
+                                ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem
+                                ipsuLorem
+                                ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem
+                                ipsuLorem
+                                ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem
+                                ipsuLorem
+                                ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem
+                                ipsuLorem
+                                ipsuLorem ipsu
+                            </small>
+                        </p>
+                        <p><b>Liên kết : </b><br>
+                            <a href="https://www.facebook.com/FireGodPhoenix-889296351096757/">
+                                <small>https://www.facebook.com/FireGodPhoenix-889296351096757</small>
+                            </a>
+                        </p>
+                    </div>
 
                 </div>
             </div>
@@ -32,7 +58,8 @@
     <div class="section-manga-new">
         <div class="container">
             <div class="section-manga-new-content">
-
+                <h2 class="heading-title">Các truyện nhóm đã dịch</a>
+                </h2>
                 <div class="row">
                     <div class="col-md-2 col-6">
                         <div class="item">
@@ -250,7 +277,7 @@
                     </ul>
                 </nav>
             </div>
-            x
+
 
         </div>
     </div>

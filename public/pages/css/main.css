@@ -1,7 +1,7 @@
 /*Common here*/
 /*End Mega Menu*/
-body {
-    font-family: 'Roboto';
+body, button {
+    font-family: 'Roboto' !important;
 
 }
 
@@ -100,18 +100,79 @@ main {
 .section-navigation .nav-item .nav-link {
     color: white !important;
     font-size: 16px;
+    font-weight: bold;
+
+}
+
+.abs-number {
+    position: relative
+}
+
+.number {
+    position: absolute;
+    padding: 4px 3px;
+    /* padding-left: 5px; */
+    /* padding-top: 5px; */
+    /* padding-bottom: 5px; */
+    /* padding-right: 5px; */
+    border-radius: 50%;
+    background: white;
+    color: #DB0008;
+    font-weight: bold;
+    /* margin-right: 10px; */
+    /* margin-left: 10px; */
+    left: 15px;
+    top: -11px;
+    font-size: 1rem;
+    font-family: 'roboto';
+    border: 1px solid #DB0008;
 }
 
 .section-navigation .nav-item.active {
     color: white !important;
     background: #DB0008;
-
 }
 
 .section-navigation .nav-item.active .nav-link {
     color: white !important;
-    font-weight: bold;
 
+}
+
+.alert-new {
+    position: relative;
+    animation: mymove 2s infinite;
+
+}
+
+@-webkit-keyframes mymove {
+    0% {
+        visibility: hidden;
+        color: transparent;
+    }
+    30% {
+        visibility: visible;
+        color: white;
+    }
+    100% {
+        visibility: visible;
+        color: white;
+    }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    0% {
+        visibility: hidden;
+        color: transparent;
+    }
+    30% {
+        visibility: visible;
+        color: white;
+    }
+    100% {
+        visibility: visible;
+        color: white;
+    }
 }
 
 .section-navigation .nav-item {
@@ -147,15 +208,20 @@ main {
     outline: none;
     color: white;
     border: none;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-bottom: 0.8rem;
+    padding-top: 1.2rem;
     padding-left: 2.5rem;
     padding-right: 0.8rem;
+    width: 100%;
+}
+
+.section-navigation .manga-search::placeholder {
+    color: white !important;
 }
 
 .section-navigation .manga-search-merge {
     position: relative;
-    padding-top: 5px;
+    padding-top: 7px !important;
     padding-bottom: 5px;
 }
 
@@ -163,7 +229,7 @@ main {
     color: white;
     position: absolute;
     left: 14px;
-
+    top: 22px;
 }
 
 /*Mega Menu*/
@@ -212,7 +278,6 @@ main {
 .section-navigation .megamenu > div > li > ul > li > a:focus {
     text-decoration: none;
     color: #262626;
-    background-color: #f5f5f5;
 }
 
 .section-navigation .megamenu.disabled > a,
@@ -323,6 +388,10 @@ main {
 
 }
 
+.social {
+    display: block !important;
+}
+
 /*end New manga section -> item*/
 @media (min-width: 576px) {
 
@@ -336,14 +405,15 @@ main {
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 1024px) {
 
-    .manga-search-merge {
-        float: right !important;
-    }
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-
+    .manga-search-merge {
+        position: absolute !important;
+        padding-top: 0 !important;
+        right: 0;
+    }
 }
 
 /*End New Manga Section*/
@@ -370,7 +440,7 @@ main {
     border-color: #DB0008 !important;
 }
 
-.modal .btn-login, .list-unstyled button {
+.btn-login, .list-unstyled button {
     background: #f40009;
     border-color: transparent;
     border-radius: 0;
@@ -383,7 +453,7 @@ main {
     border: 0 !important;
 }
 
-.modal .btn-login:hover, .list-unstyled button:hover {
+.btn-login:hover, .list-unstyled button:hover {
     background: #DB0008;
 }
 
@@ -396,6 +466,7 @@ main {
     padding-bottom: 10px;
     padding-right: 15px;
     padding-left: 15px;
+    display: none;
 }
 
 .social .btn-logout {
