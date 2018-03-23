@@ -99,7 +99,7 @@ var SnippetLogin = function() {
                 success: function(rsp, status, xhr, $form) {
                     if(rsp.status == true)
                     {
-                        window.location = '/panel/dashboard';
+                        window.location = '/panel/dashboard/view';
                     } else {
                         // similate 2s delay
                         setTimeout(function() {
