@@ -8,6 +8,7 @@ image: php:7.1.3
 pipelines:
   default:
     - step:
+        deployment: test
         caches:
           - composer
         script:
