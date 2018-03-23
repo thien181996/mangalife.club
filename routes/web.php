@@ -93,12 +93,12 @@ Route::middleware(['check_login','role_admin'])->group(function () {
     //START : READED
         Route::get('/panel/readed/view', 'admin\ReadedController@listReaded')->name('panel.listReaded');
     //END : READED
-    //START : CHAPTER
+    //START : NOTIFICATION
         Route::get('/panel/notification/view', 'admin\NotificationController@listNotification')->name('panel.listNotification');
         Route::get('/panel/notification/create', 'admin\NotificationController@createNotification')->name('panel.createNotification');
         Route::get('/panel/notification/delete/{id}', 'admin\NotificationController@deleteNotification')->name('panel.deleteNotification');
         Route::post('/panel/notification/store', 'admin\NotificationController@storeNotification')->name('panel.storeNotification');
-    //END : CHAPTER
+    //END : NOTIFICATION
     ////START : REPORT
         Route::get('/panel/report/view', 'admin\ReportController@listReport')->name('panel.listReport');
     //END : DONATE
@@ -114,7 +114,7 @@ Route::middleware(['check_login','role_admin'])->group(function () {
     //END : SETTING
     //START: MODULE
         Route::get('/panel/module/view', 'admin\ModuleController@listModule')->name('panel.listModule');
-        Route::get('/panel/module/delete', 'admin\ModuleController@deleteModule')->name('panel.deleteModule');
+        Route::get('/panel/module/delete/{id}', 'admin\ModuleController@deleteModule')->name('panel.deleteModule');
         Route::get('/panel/module/updateRoutes', function () {
             $routes = Route::getRoutes();
             $count = 0;
@@ -175,4 +175,7 @@ Route::middleware(['check_login','role_admin'])->group(function () {
         Route::post('/panel/action/store', 'admin\ModuleActionController@storeModuleAction')->name('panel.storeModuleAction');
         Route::post('/panel/action/ajax', 'admin\ModuleActionController@ajaxModuleAction')->name('panel.ajaxModuleAction');
     //END : ACTION
+    //START : STATISTIC DETAILS
+        Route::get('/panel/statistic_detail/view', 'admin\StatisticController@detailStatistic')->name('panel.detailStatistic');
+    //END : STATISTIC DETAILS
 });

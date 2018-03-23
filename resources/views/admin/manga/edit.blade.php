@@ -55,7 +55,7 @@
                                         <p>Kích thước chuẩn 360x360</p>
                                         <img style="max-height: 360px" id="view_create_img_manga_cover" src="{{ asset('panel/manga/stream/' . $manga->manga_path . '/' . $manga->manga_cover) }}" width="100%" alt="{{ $manga->manga_name }}">
                                     </label>
-                                    <input id="view_create_input_manga_cover" name="manga_cover" type="file" class="form-control m-input m--hide" accept="">
+                                    <input id="view_create_input_manga_cover" name="manga_cover" type="file" class="form-control m-input m--hide" accept="image/jpeg, image/png">
                                 </div>
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
@@ -89,7 +89,7 @@
                                 </select>
                             </div>
                             <div class="col-lg-2">
-                                <a href="{{ route('panel.createAuthor') }}" target="_blank" class="btn btn-success m-btn m-btn--icon btn-sm m-btn--icon-only">
+                                <a href="{{ route('panel.createAuthor') }}" target="_blank" class="btn btn-success m-btn m-btn--icon m-btn--icon-only">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
@@ -106,7 +106,7 @@
                                 </select>
                             </div>
                             <div class="col-lg-2">
-                                <a href="{{ route('panel.createCategory') }}" target="_blank" class="btn btn-success m-btn m-btn--icon btn-sm m-btn--icon-only">
+                                <a href="{{ route('panel.createCategory') }}" target="_blank" class="btn btn-success m-btn m-btn--icon m-btn--icon-only">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
@@ -123,7 +123,7 @@
                                 </select>
                             </div>
                             <div class="col-lg-2">
-                                <a href="{{ route('panel.createTranslateGroup') }}" target="_blank" class="btn btn-success m-btn m-btn--icon btn-sm m-btn--icon-only">
+                                <a href="{{ route('panel.createTranslateGroup') }}" target="_blank" class="btn btn-success m-btn m-btn--icon m-btn--icon-only">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
@@ -161,12 +161,12 @@
                                     <button type="submit" class="btn btn-primary">
                                         Lưu thay đổi
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listManga') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col-lg-4 m--align-right">
-                                    <a href="#" class="btn btn-danger">
+                                    <a href="{{ route('panel.deleteManga',['id'=>$manga->id]) }}" class="btn btn-danger">
                                         Xóa
                                     </a>
                                 </div>

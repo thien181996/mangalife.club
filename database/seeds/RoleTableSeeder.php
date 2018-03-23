@@ -15,7 +15,7 @@ class RoleTableSeeder extends Seeder
             ['role_name'=>"Quản trị viên",'role_rank'=>1],
             ['role_name'=>"Kiểm duyệt viên",'role_rank'=>2],
             ['role_name'=>"Thành viên",'role_rank'=>3],
-            ['role_name'=>"Tù nhân",'role_rank'=>4],
+            ['role_name'=>"Bị khóa",'role_rank'=>4],
 
         ];
         foreach ($roles as $key => $value) {

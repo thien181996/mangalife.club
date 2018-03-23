@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Truyện đã được đọc')
+@section('title','Thống kê Request')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
@@ -12,7 +12,7 @@
 							<i class="flaticon-coins"></i>
 						</span>
                             <h3 class="m-portlet__head-text">
-                                Truyện đã được đọc
+                                Thống kê Request
                             </h3>
                         </div>
                     </div>
@@ -27,16 +27,7 @@
                 <div class="m-portlet__body">
                     <div class="row">
                         <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <select class="form-control m-input" name="user_id" id="user_id">
-                                        <option value="0">-- Lựa chọn tài khoản --</option>
-                                        @foreach($users as $user)
-                                            <option value="{{ $user->id }}" {{ $user_id == $user->id ? "selected" : "" }}>{{ $user->username }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="col-lg-4 m--align-right">
 
@@ -46,36 +37,25 @@
                     <table class="table table-striped">
                         <thead>
                         <tr class="m--font-transform-u m--font-boldest">
-                            <th scope="col">Tài khoản</th>
-                            <th scope="col">Truyện</th>
-                            <th scope="col">Chương</th>
+                            <th scope="col">Token</th>
+                            <th scope="col">Target</th>
+                            <th scope="col">Người truy cập</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($reads as $read)
+                        @foreach($result as $item)
                             <tr>
-                                <td>{{ $read->getUserEmail() }}</td>
-                                <td>{{ $read->getMangaName() }}</td>
-                                <td>{{ $read->getChapterName() }}</td>
+                                <td>{{ $item->token }}</td>
+                                <td>{{ $item->target }}</td>
+                                <td>{{ $item->getUserEmail() }}</td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $reads->appends(['user_id'=>$user_id])->links() }}
+                    {{ $result->appends(['statistic_id'=>$statistic_id])->links() }}
                 </div>
             </div>
             <!--end::Portlet-->
         </div>
     </div>
-@endsection
-@section('js')
-    <script>
-        $('#user_id').on('select2:select', function (e) {
-            let user_id = e.params.data.id;
-            if(user_id != 0)
-            {
-                location.href = '?user_id=' + user_id;
-            }
-        });
-    </script>
 @endsection

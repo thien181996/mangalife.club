@@ -11,11 +11,19 @@ use App\Http\Requests\admin\NotificationRequest;
 
 class NotificationController extends Controller
 {
-    public function listNotification()
+    public function listNotification(Request $rq)
     {
-        $notis = Mailbox::paginate(10);
+        $users = User::all();
+        $user_id = $rq->user_id;
+        if($user_id)
+        {
+            $notis = Mailbox::where('user_id',$user_id)->orderBy('created_at','desc')->paginate(10);
+        } else {
+            $notis = Mailbox::orderBy('created_at','desc')->paginate(10);
+        }
 
-        return view('admin.notification.list',compact('notis'));
+
+        return view('admin.notification.list',compact('notis','users','user_id'));
     }
 
     public function createNotification()

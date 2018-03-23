@@ -377,6 +377,37 @@ $('.manga_delete').each((i,v)=>{
         $('#modal_manga_delete_button').attr('href',$(v).attr('value'));
     });
 });
+$('.input-search-manga').keyup(function (e) {
+    $('.div_search').addClass('m-loader');
+    $('.div_search_hide').removeClass('m--hide');
+    let keyword = $(this).val();
+    $.ajax({
+        data: {
+            keyword: keyword,
+            action: "search"
+        },
+        type: 'post',
+        url: routeAjaxManga,
+        success: function (rsp) {
+            // console.log(rsp.data);
+            $('.div_search_hide').html('');
+            for (let i = 0;i<rsp.data.length;i++)
+            {
+                let email = rsp.data[i]['manga_name'];
+                let replace_bold = email.replace(keyword,'<b>' + keyword + '</b>');
+                let element = `<span class="item-search" onclick="editUser(this)" data="/panel/manga/edit/${rsp.data[i]['id']}">${replace_bold}</span>`;
+                // let element = `<a href="/panel/user/edit/${rsp.data[i]['id']}" class="item-search" >${replace_bold}</a>`;
+                $('.div_search_hide').append(element);
+            }
+            $('.div_search').removeClass('m-loader');
+        },
+        error: function (e) {
+            $('.div_search_hide').html('');
+            $('.div_search').removeClass('m-loader');
+            $('.div_search_hide').addClass('m--hide');
+        }
+    })
+});
 // END : view_manga_list
 // START : view_manga_create, view_manga_edit
     $('#div_chapter').sortable({
@@ -644,3 +675,15 @@ $('.input-search-user').keyup(function (e) {
     })
 });
 // END : view_user_list
+// START : view_rate_list
+    $('#select_manga_id').select2();
+// END : view_rate_list
+// START : view_module_list
+    $('.module_delete').each((i,v)=>{
+        $(v).click(()=>{
+            $('#modal_module_delete').modal('show');
+            $('#modal_module_delete_content').html('Bạn có chắc chắn muốn xóa module này, module bị xóa sẽ không thể truy cập được?');
+            $('#modal_module_delete_button').attr('href',$(v).attr('value'));
+        });
+    });
+// END : view_module_list

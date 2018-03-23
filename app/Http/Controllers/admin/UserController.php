@@ -51,7 +51,7 @@ class UserController extends Controller
         $role_user->role_id = 4;
         $role_user->save();
 
-        return redirect(route('panel.listUser'));
+        return redirect(url()->previous());
     }
     //action ajax
     public function ajaxUser(Request $rq)

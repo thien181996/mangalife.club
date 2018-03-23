@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Module;
 use App\ModuleAction;
 use App\RoleUser;
+use App\Statistic;
+use App\StatisticDetail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 use File;
@@ -68,6 +71,41 @@ class lib
 
     public function moduleAccess()
     {
+        //CHECK IP
+        $ip = request()->ip();
+        $token = csrf_token();
+        $target = url()->full();
+        $check_ip = Statistic::where('ip',$ip)->first();
+        if(Auth::check())
+        {
+            $user_id = Auth::id();
+        } else {
+            $user_id = "";
+        }
+        if($check_ip)
+        {
+            $check_ip->ip = $ip;
+            $check_ip->save();
+
+            $new_access = new StatisticDetail();
+            $new_access->statistic_id = $check_ip->id;
+            $new_access->token = $token;
+            $new_access->target = $target;
+            $new_access->user_id = $user_id;
+            $new_access->save();
+        } else {
+            $statistic = new Statistic();
+            $statistic->ip = $ip;
+            $statistic->save();
+
+            $new_access = new StatisticDetail();
+            $new_access->statistic_id = $statistic->id;
+            $new_access->token = $token;
+            $new_access->target = $target;
+            $new_access->user_id = $user_id;
+            $new_access->save();
+        }
+        //CHECK MODULE
         $get_url_module = str_after(url()->current(),'/');
         $slice_str = explode('/',$get_url_module);
         $access = RoleUser::join('role_module','role_users.role_id','role_module.role_id')->where('user_id',Auth::id())->get();

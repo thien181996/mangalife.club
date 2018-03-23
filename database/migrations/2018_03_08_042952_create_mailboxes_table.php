@@ -18,6 +18,7 @@ class CreateMailboxesTable extends Migration
             $table->integer('mailbox_type');
             $table->text('mailbox_content');
             $table->integer('user_id');
+            $table->integer('created_by');
             $table->timestamps();
         });
     }

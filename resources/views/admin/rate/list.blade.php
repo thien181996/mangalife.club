@@ -27,7 +27,24 @@
                 <div class="m-portlet__body">
                     <div class="row">
                         <div class="col-lg-8">
-
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <select class="form-control m-input" name="user_id" id="user_id">
+                                        <option value="0">-- Lựa chọn tài khoản --</option>
+                                        @foreach($users as $user)
+                                            <option value="{{ $user->id }}" {{ $user_id == $user->id ? "selected" : "" }}>{{ $user->username }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <select class="form-control m-input" name="select_manga_id" id="select_manga_id">
+                                        <option value="0">-- Lựa chọn Manga --</option>
+                                        @foreach($mangas as $manga)
+                                            <option value="{{ $manga->id }}" {{ $manga_id == $manga->id ? "selected" : "" }}>{{ $manga->manga_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-4 m--align-right">
 
@@ -38,27 +55,28 @@
                         <thead>
                         <tr class="m--font-transform-u m--font-boldest">
                             <th scope="col">Tài khoản</th>
-                            <th scope="col">Đánh giá</th>
-                            <th scope="col">Hành động</th>
+                            <th scope="col" class="text-center">Đánh giá</th>
+                            <th scope="col" class="text-center">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($rates as $rate)
                             <tr>
-                                <td>{{ $rate->user_id }}</td>
-                                <td>{{ $rate->rate_score }}</td>
-                                <td>
+                                <td>{{ $rate->getUserEmail() }}</td>
+                                <td class="text-center">{{ $rate->rate_score }} / 10</td>
+                                <td class="text-center">
                                     <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">
                                         <i class="la la-ellipsis-h"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                        <a class="dropdown-item rate_delete" value="{{ route('panel.deleteRate',['id'=>$rate->id]) }}"><i class="la la-trash"></i> Xóa</a>
+                                        <a class="dropdown-item rate_delete" href="#modal_rate_delete" value="{{ route('panel.deleteRate',['id'=>$rate->id]) }}"><i class="la la-trash"></i> Xóa</a>
                                     </div>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+                    {{ $rates->appends(['user_id'=>$user_id,'manga_id'=>$manga_id])->links() }}
                 </div>
             </div>
             <!--end::Portlet-->
@@ -91,4 +109,22 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        $('#user_id').on('select2:select', function (e) {
+            let user_id = e.params.data.id;
+            if(user_id != 0)
+            {
+                location.href = '?user_id=' + user_id;
+            }
+        });
+        $('#select_manga_id').on('select2:select', function (e) {
+            let manga_id = e.params.data.id;
+            if(manga_id != 0)
+            {
+                location.href = '?manga_id=' + manga_id;
+            }
+        });
+    </script>
 @endsection

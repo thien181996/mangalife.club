@@ -22,9 +22,15 @@ class ChapterController extends Controller
         $this->lib = $lib;
     }
     //get add from table chapter
-    public function listChapter()
+    public function listChapter(Request $rq)
     {
-        $chapters = Chapter::paginate(10);
+        if($rq->manga_id)
+        {
+            $chapters = Chapter::where('manga_id',$rq->manga_id)->orderBy('created_at','desc')->paginate(10);
+        } else {
+            $chapters = Chapter::orderBy('created_at','desc')->paginate(10);
+        }
+
 
         return view('admin.chapter.list',compact('chapters'));
     }

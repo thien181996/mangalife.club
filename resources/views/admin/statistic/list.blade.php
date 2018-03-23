@@ -37,23 +37,29 @@
                     <table class="table table-striped">
                         <thead>
                         <tr class="m--font-transform-u m--font-boldest">
-                            <th scope="col">Mục tiêu</th>
                             <th scope="col">IP</th>
-                            <th scope="col">Token</th>
-                            <th scope="col">Tài khoản</th>
+                            <th scope="col">Tổng request</th>
+                            <th scope="col" class="text-center">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($statistics as $statistic)
                             <tr>
-                                <td>{{ $statistic->target }}</td>
                                 <td>{{ $statistic->ip }}</td>
-                                <td>{{ $statistic->token }}</td>
-                                <td>{{ $statistic->user_id }}</td>
+                                <td>{{ $statistic->countStatistic() }}</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">
+                                        <i class="la la-ellipsis-h"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                        <a class="dropdown-item" href="{{ route('panel.detailStatistic') }}?statistic_id={{ $statistic->id }}"><i class="la la-cog"></i> Danh sách request</a>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+                    {{ $statistics->links() }}
                 </div>
             </div>
             <!--end::Portlet-->

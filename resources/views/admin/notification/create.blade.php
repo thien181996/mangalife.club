@@ -58,15 +58,15 @@
                                     <button type="submit" class="btn btn-primary">
                                         Gửi đi
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listNotification') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {{ csrf_field() }}
-                    <input type="hidden" name="user_login" value="1">
+                    <input type="hidden" name="user_login" value="{{ Auth::id() }}">
                 </form>
                 <!--end::Form-->
             </div>

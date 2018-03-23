@@ -19,58 +19,58 @@
                 <!--begin::Form-->
                 <form class="m-form m-form--fit m-form--label-align-right m-form--group-seperator" action="{{ route('panel.storeSetting') }}" method="post" enctype="multipart/form-data">
                     <div class="m-portlet__body">
-                        <div class="form-group m-form__group row">
-                            <label class="col-lg-2 col-form-label">
-                                GOOGLE CLIENT ID
-                            </label>
-                            <div class="col-lg-6">
-                                <input id="client_id" name="client_id" type="text" class="form-control m-input" placeholder="Nhập thông số client id google drive" value="{{ $settings->client_id }}">
-                                @if(count($errors) > 0)
-                                    <span class="m--font-danger">
-                                        {{$errors->first('client_id')}}
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group m-form__group row">
-                            <label class="col-lg-2 col-form-label">
-                                GOOGLE CLIENT SECRET
-                            </label>
-                            <div class="col-lg-6">
-                                <input id="client_secret" name="client_secret" type="text" class="form-control m-input" placeholder="Nhập thông số client secret google drive" value="{{ $settings->client_secret }}">
-                                @if(count($errors) > 0)
-                                    <span class="m--font-danger">
-                                        {{$errors->first('client_secret')}}
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group m-form__group row">
-                            <label class="col-lg-2 col-form-label">
-                                GOOGLE CLIENT TOKEN
-                            </label>
-                            <div class="col-lg-6">
-                                <input id="client_token" name="client_token" type="text" class="form-control m-input" placeholder="Nhập thông số client token google drive" value="{{ $settings->client_token }}">
-                                @if(count($errors) > 0)
-                                    <span class="m--font-danger">
-                                        {{$errors->first('client_token')}}
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group m-form__group row">
-                            <label class="col-lg-2 col-form-label">
-                                GOOGLE ROOT FOLDER
-                            </label>
-                            <div class="col-lg-6">
-                                <input id="client_folder" name="client_folder" type="text" class="form-control m-input" placeholder="Nhập thông số root folder google drive" value="{{ $settings->client_folder }}">
-                                @if(count($errors) > 0)
-                                    <span class="m--font-danger">
-                                        {{$errors->first('client_folder')}}
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="form-group m-form__group row">--}}
+                            {{--<label class="col-lg-2 col-form-label">--}}
+                                {{--GOOGLE CLIENT ID--}}
+                            {{--</label>--}}
+                            {{--<div class="col-lg-6">--}}
+                                {{--<input id="client_id" name="client_id" type="text" class="form-control m-input" placeholder="Nhập thông số client id google drive" value="{{ $settings->client_id }}">--}}
+                                {{--@if(count($errors) > 0)--}}
+                                    {{--<span class="m--font-danger">--}}
+                                        {{--{{$errors->first('client_id')}}--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group m-form__group row">--}}
+                            {{--<label class="col-lg-2 col-form-label">--}}
+                                {{--GOOGLE CLIENT SECRET--}}
+                            {{--</label>--}}
+                            {{--<div class="col-lg-6">--}}
+                                {{--<input id="client_secret" name="client_secret" type="text" class="form-control m-input" placeholder="Nhập thông số client secret google drive" value="{{ $settings->client_secret }}">--}}
+                                {{--@if(count($errors) > 0)--}}
+                                    {{--<span class="m--font-danger">--}}
+                                        {{--{{$errors->first('client_secret')}}--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group m-form__group row">--}}
+                            {{--<label class="col-lg-2 col-form-label">--}}
+                                {{--GOOGLE CLIENT TOKEN--}}
+                            {{--</label>--}}
+                            {{--<div class="col-lg-6">--}}
+                                {{--<input id="client_token" name="client_token" type="text" class="form-control m-input" placeholder="Nhập thông số client token google drive" value="{{ $settings->client_token }}">--}}
+                                {{--@if(count($errors) > 0)--}}
+                                    {{--<span class="m--font-danger">--}}
+                                        {{--{{$errors->first('client_token')}}--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group m-form__group row">--}}
+                            {{--<label class="col-lg-2 col-form-label">--}}
+                                {{--GOOGLE ROOT FOLDER--}}
+                            {{--</label>--}}
+                            {{--<div class="col-lg-6">--}}
+                                {{--<input id="client_folder" name="client_folder" type="text" class="form-control m-input" placeholder="Nhập thông số root folder google drive" value="{{ $settings->client_folder }}">--}}
+                                {{--@if(count($errors) > 0)--}}
+                                    {{--<span class="m--font-danger">--}}
+                                        {{--{{$errors->first('client_folder')}}--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="form-group m-form__group row">
                             <label class="col-lg-2 col-form-label">
                                 Đường dẫn Ảnh Tác giả

@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class StatisticDetail extends Model
 {
-    protected $table = 'comments';
-
-    protected $fillable = [];
+    protected $table = 'statistic_details';
 
     public function getUserEmail()
     {

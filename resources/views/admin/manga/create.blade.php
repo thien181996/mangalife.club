@@ -53,9 +53,9 @@
                                 <div class="view_create_div_manga_cover">
                                     <label for="view_create_input_manga_cover">
                                         <p>Kích thước chuẩn 360x360</p>
-                                        <img style="max-height: 360px" id="view_create_img_manga_cover" src="{{ asset('uploads/default_image/manga.jpg') }}" width="100%" alt="Manga Cover">
+                                        <img style="max-height: 360px" id="view_create_img_manga_cover" src="{{ asset('uploads/default_image/default-image.jpg') }}" width="100%" alt="Manga Cover">
                                     </label>
-                                    <input id="view_create_input_manga_cover" name="manga_cover" type="file" class="form-control m-input m--hide" accept="">
+                                    <input id="view_create_input_manga_cover" name="manga_cover" type="file" class="form-control m-input m--hide" accept="image/jpeg, image/png">
                                 </div>
                                 @if(count($errors) > 0)
                                     <span class="m--font-danger">
@@ -110,13 +110,8 @@
                                     <button type="submit" class="btn btn-primary">
                                         Thêm mới
                                     </button>
-                                    <button type="reset" class="btn btn-secondary">
+                                    <a href="{{ route('panel.listManga') }}" class="btn btn-secondary">
                                         Hủy bỏ
-                                    </button>
-                                </div>
-                                <div class="col-lg-4 m--align-right">
-                                    <a href="#" class="btn btn-danger">
-                                        Xóa
                                     </a>
                                 </div>
                             </div>

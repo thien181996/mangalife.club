@@ -12,7 +12,12 @@ class Chapter extends Model
 
     public function getMangaName()
     {
-        $manga = Manga::find($this->manga_id)->manga_name;
-        return $manga;
+        if($this->manga_id)
+        {
+            $manga = Manga::find($this->manga_id)->manga_name;
+            return $manga;
+        } else {
+            return "NULL";
+        }
     }
 }

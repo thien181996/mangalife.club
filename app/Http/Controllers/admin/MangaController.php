@@ -6,6 +6,13 @@ use App\Author;
 use App\AuthorManga;
 use App\Category;
 use App\CategoryManga;
+use App\Chapter;
+use App\ChapterManga;
+use App\Comment;
+use App\Follow;
+use App\Notification;
+use App\Rate;
+use App\Readed;
 use App\Setting;
 use App\TranslateGroup;
 use App\TranslateGroupManga;
@@ -27,6 +34,12 @@ class MangaController extends Controller
     //list all manga
     public function listManga(Request $rq)
     {
+        $authors = Author::all();
+        $author_id = $rq->author_id;
+        $groups = TranslateGroup::all();
+        $group_id = $rq->group_id;
+        $categories = Category::all();
+        $category_id = $rq->category_id;
         if($rq->author_id)
         {
             $mangas = AuthorManga::join('mangas','author_mangas.manga_id','mangas.id')->select('mangas.*')->where('author_id',$rq->author_id)->paginate(10);
@@ -37,7 +50,7 @@ class MangaController extends Controller
         } else {
             $mangas = Manga::paginate(10);
         }
-        return view('admin.manga.list',compact('mangas'));
+        return view('admin.manga.list',compact('mangas','authors','author_id','groups','group_id','categories','category_id'));
     }
     //create manga
     public function createManga()
@@ -140,6 +153,10 @@ class MangaController extends Controller
                     $translate_group_manga->delete();
                     return response(['status'=>true]);
                 }
+            case "search":
+                $mangas = Manga::where('manga_name','like','%'.$rq->keyword.'%')->limit(5)->get();
+                return response(['data'=>$mangas]);
+                break;
             default:
                 return response(['error'=>"nothing"]);
         }
@@ -184,6 +201,65 @@ class MangaController extends Controller
     //delete obj by id
     public function deleteManga($manga_id)
     {
+        $manga = Manga::find($manga_id);
+        if($manga)
+        {
+            $manga->delete();
+            $category_mangas = CategoryManga::where('manga_id',$manga->id)->get();
+            foreach ($category_mangas as $category_manga)
+            {
+                $category_manga->delete();
+            }
+            $author_mangas = AuthorManga::where('manga_id',$manga->id)->get();
+            foreach ($author_mangas as $author_manga)
+            {
+                $author_manga->delete();
+            }
+            $rates = Rate::where('manga_id',$manga->id)->get();
+            foreach ($rates as $rate)
+            {
+                $rate->delete();
+            }
+            $readed = Readed::where('manga_id',$manga->id)->get();
+            foreach ($readed as $read)
+            {
+                $read->delete();
+            }
+            $chapters = Chapter::where('manga_id',$manga->id)->get();
+            foreach ($chapters as $chapter)
+            {
+                $chapter->delete();
+                $chapter_mangas = ChapterManga::where('chapter_id',$chapter->id)->get();
+                foreach ($chapter_mangas as $chapter_manga)
+                {
+                    $chapter_manga->delete();
+                }
+                $notifications = Notification::where('chapter_slug',$chapter->chapter_slug)->get();
+                foreach ($notifications as $item)
+                {
+                    $item->delete();
+                }
+            }
 
+            $comments = Comment::where('manga_id',$manga->id)->get();
+            foreach ($comments as $comment)
+            {
+                $comment->delete();
+            }
+            $groups = TranslateGroupManga::where('manga_id',$manga->id)->get();
+            foreach ($groups as $group)
+            {
+                $group->delete();
+            }
+            $follows = Follow::where('manga_id',$manga->id)->get();
+            foreach ($follows as $follow)
+            {
+                $follow->delete();
+            }
+
+
+        }
+
+        return redirect(route('panel.listManga'));
     }
 }

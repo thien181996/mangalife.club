@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatisticTable extends Migration
+class CreateReportTemplateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateStatisticTable extends Migration
      */
     public function up()
     {
-        Schema::create('statistics', function (Blueprint $table) {
+        Schema::create('report_template', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ip',191);
+            $table->string('template_name',191);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateStatisticTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statistic');
+        Schema::dropIfExists('report_template');
     }
 }

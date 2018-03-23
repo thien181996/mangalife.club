@@ -24,7 +24,16 @@ class NotificationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required',
+            'mailbox_content' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'user_id.required' => "Nội dung này không được để trống",
+            'mailbox_content.required' => "Nội dung này không được để trống"
         ];
     }
 }

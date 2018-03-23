@@ -59,7 +59,7 @@
                             <th scope="col">Tên Module</th>
                             <th scope="col">Danh sách Action</th>
                             <th scope="col">Quyền truy cập</th>
-                            <th scope="col">Hành động</th>
+                            <th scope="col" class="text-center">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -84,12 +84,12 @@
                                     </div>
                                     @endforeach
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">
                                         <i class="la la-ellipsis-h"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                        <a class="dropdown-item module_delete" value="{{ route('panel.deleteModule',['id'=>$module->id]) }}"><i class="la la-trash"></i> Xóa</a>
+                                        <a class="dropdown-item module_delete" href="#modal_rate_delete" value="{{ route('panel.deleteModule',['id'=>$module->id]) }}"><i class="la la-trash"></i> Xóa</a>
                                     </div>
                                 </td>
                             </tr>
@@ -100,12 +100,12 @@
             </div>
             <!--end::Portlet-->
         </div>
-        <div class="modal fade" id="modal_rate_delete" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+        <div class="modal fade" id="modal_module_delete" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">
-                            Xóa Đánh giá
+                            Xóa Module
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
@@ -114,13 +114,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p id="modal_rate_delete_content"></p>
+                        <p id="modal_module_delete_content"></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Đóng
                         </button>
-                        <a href="" id="modal_rate_delete_button" class="btn btn-primary">
+                        <a href="" id="modal_module_delete_button" class="btn btn-primary">
                             Xóa
                         </a>
                     </div>
