@@ -11,8 +11,7 @@ php:
   - 7.1
 
 before_script:
-  - cp .env.travis .env
-  - mysql -e 'create database travis;'
+  - mysql -e 'create database mangalife.club;'
   - composer install --no-interaction
   - php artisan key:generate
   - php artisan migrate:refresh --seed
