@@ -4,16 +4,10 @@ addons:
   hosts:
     - travis.dev
 
-services:
-  - mysql
-
 php:
   - 7.1
 
 before_script:
-  - mysql -e 'create database mangalife.club;'
   - composer install --no-interaction
-  - php artisan key:generate
-  - php artisan migrate:refresh --seed
 
 script: ./vendor/bin/phpunit
